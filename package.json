@@ -1,0 +1,25 @@
+{
+  "name": "rootwork-framework-landing",
+  "version": "1.0.0",
+  "description": "Root Work Framework - Trauma-informed, healing-centered pedagogy landing page",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "education",
+    "trauma-informed",
+    "STEAM",
+    "living-learning-labs",
+    "project-based-learning",
+    "SAMHSA",
+    "root-work-framework"
+  ],
+  "author": "Dr. Shawn A. Hearn, Ed.D., J.D.",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR-USERNAME/rootwork-framework.git"
+  }
+}
