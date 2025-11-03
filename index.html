@@ -1162,13 +1162,16 @@
                     timestamp: new Date().toISOString()
                 };
                 
-                // Log to console (in production, this would send to your backend/email service)
-                console.log('Newsletter Signup:', formData);
-                
-                // Store in localStorage for demonstration
-                let signups = JSON.parse(localStorage.getItem('newsletterSignups') || '[]');
-                signups.push(formData);
-                localStorage.setItem('newsletterSignups', JSON.stringify(signups));
+                // TODO: Replace with actual backend API call in production
+                // Example: fetch('/api/newsletter/subscribe', { method: 'POST', body: JSON.stringify(formData) })
+                // For demonstration only - do not use in production as it exposes user data
+                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                    console.log('Newsletter Signup (demo only):', formData);
+                    // Store in localStorage for demonstration purposes only
+                    let signups = JSON.parse(localStorage.getItem('newsletterSignups') || '[]');
+                    signups.push(formData);
+                    localStorage.setItem('newsletterSignups', JSON.stringify(signups));
+                }
                 
                 // Show success message
                 form.style.display = 'none';
@@ -1177,16 +1180,20 @@
                 // Hide trigger button
                 trigger.classList.add('hidden');
                 
-                // Close modal after 3 seconds
+                // Constants for timing
+                const SUCCESS_DISPLAY_TIME = 3000; // Show success message for 3 seconds
+                const FORM_RESET_DELAY = 500; // Wait for modal close animation before resetting
+                
+                // Close modal after showing success message
                 setTimeout(() => {
                     closeModal();
-                    // Reset form for next time
+                    // Reset form after modal close animation completes
                     setTimeout(() => {
                         form.style.display = 'flex';
                         successMessage.classList.remove('active');
                         form.reset();
-                    }, 500);
-                }, 3000);
+                    }, FORM_RESET_DELAY);
+                }, SUCCESS_DISPLAY_TIME);
             });
             
             // Close on ESC key
