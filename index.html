@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Root Work Framework – Rerooted Learning: Where Academics and Healing Grow Together</title>
-    <meta name="description" content="The Root Work Framework is a dual-purpose pedagogy that weaves academic rigor with healing-centered, biophilic practice. Serving K-12 educators, homeschool families, charter schools, and alternative education programs.">
+    <!-- Required mobile meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- SEO -->
+    <title>RootWork Framework | From Garden to Growth (FG2G)</title>
+    <meta name="description" content="Dual-purpose pedagogy blending STEAM, Living Learning Labs, and ACEs-aware practices. Download free resources and get started.">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="RootWork Framework | From Garden to Growth">
+    <meta property="og:description" content="Where academics and healing grow together.">
+    <meta property="og:url" content="https://fg2g-rwfw.com/">
+    <meta property="og:image" content="https://fg2g-rwfw.com/og-cover.jpg">
+    
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RootWork Framework | From Garden to Growth">
+    <meta name="twitter:description" content="STEAM + Living Learning Labs + ACEs-aware practice.">
+    <meta name="twitter:image" content="https://fg2g-rwfw.com/og-cover.jpg">
+    
+    <!-- Favicons (optional but recommended) -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    
+    <!-- Performance (optional, only if using web fonts) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <style>
         /* ============================================
@@ -512,6 +535,48 @@
             }
         }
     </style>
+    
+    <style>
+  :root{
+    --fs-body: clamp(16px, 1.8vw, 18px);
+    --fs-h1: clamp(28px, 6vw, 48px);
+    --fs-h2: clamp(22px, 4.5vw, 34px);
+    --fs-h3: clamp(18px, 3.5vw, 24px);
+  }
+  body{ font-size: var(--fs-body); line-height: 1.6; }
+  h1{ font-size: var(--fs-h1); line-height: 1.15; }
+  h2{ font-size: var(--fs-h2); }
+  h3{ font-size: var(--fs-h3); }
+
+  /* Hero container should not push CTA off-screen on phones */
+  .hero{
+    display:grid; place-items:center; min-height: 70vh;
+    padding: clamp(16px, 4vw, 64px);
+    text-align:center;
+  }
+  .hero img{ max-width:100%; height:auto; object-fit:cover }
+
+  /* Sticky CTA (mobile only) */
+  .rwfw-sticky-cta{
+    position:fixed; left:0; right:0; bottom:0; z-index:50;
+    background:#0b6623; /* RootWork green */
+    padding:.75rem 1rem; text-align:center;
+  }
+  .rwfw-sticky-cta a{
+    color:#fff; font-weight:700; text-decoration:none;
+    display:inline-block; min-height:44px; line-height:44px; padding:0 .75rem; border-radius:9999px;
+    outline-offset:2px;
+  }
+  @media (min-width: 768px){ .rwfw-sticky-cta{ display:none } }
+
+  /* Safe, high-contrast primary button (thumb-friendly) */
+  .rwfw-btn{
+    display:inline-block; padding:.9rem 1.25rem; border-radius:9999px; font-weight:700;
+    font-size:1rem; line-height:1; min-height:44px; text-decoration:none;
+    background:#0b6623; color:#fff;
+  }
+  .rwfw-btn:focus-visible{ outline: 2px solid #fff; outline-offset: 2px; }
+</style>
 </head>
 <body>
     <!-- Header -->
@@ -790,5 +855,9 @@
             </div>
         </div>
     </footer>
+    
+    <div class="rwfw-sticky-cta" role="region" aria-label="Quick actions">
+      <a href="#resources" class="rwfw-btn">Explore Free Resources</a>
+    </div>
 </body>
 </html>
