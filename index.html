@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Root Work Framework – Rerooted Learning: Where Academics and Healing Grow Together</title>
-    <meta name="description" content="The Root Work Framework is a dual-purpose pedagogy that weaves academic rigor with healing-centered, biophilic practice. Serving K-12 educators, homeschool families, charter schools, and alternative education programs.">
+    <meta name="description" content="The Root Work Framework is a dual-purpose pedagogy that weaves academic rigor with healing-centered, biophilic practice. Built on the 5Rs Framework (Root, Regulate, Reflect, Restore, Reconnect). Serving K-12 educators, homeschool families, charter schools, and alternative education programs.">
     
     <style>
         /* ============================================
@@ -148,6 +148,20 @@
             color: var(--gold-leaf);
         }
         
+        nav a.highlight {
+            background: var(--gold-leaf);
+            color: var(--evergreen);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 700;
+        }
+        
+        nav a.highlight:hover {
+            background: var(--olive-gold);
+            color: var(--evergreen);
+            text-decoration: none;
+        }
+        
         .cta-button {
             background: var(--gold-leaf);
             color: var(--evergreen);
@@ -157,12 +171,16 @@
             border: none;
             cursor: pointer;
             transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
         }
         
         .cta-button:hover {
             background: var(--olive-gold);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: var(--evergreen);
+            text-decoration: none;
         }
         
         /* Container */
@@ -773,9 +791,9 @@
                     <li><a href="#framework">Framework</a></li>
                     <li><a href="#audiences">Who We Serve</a></li>
                     <li><a href="#ecosystem">Ecosystem</a></li>
-                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#resources" class="highlight">Resources</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><button class="cta-button">Get Started</button></li>
+                    <li><a href="mailto:hearn.sa@gmail.com" class="cta-button">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -786,10 +804,11 @@
         <div class="container">
             <h1>Root Work Framework</h1>
             <p class="tagline">Rerooted Learning: Where Academics and Healing Grow Together</p>
-            <p class="description">A dual-purpose pedagogy that weaves academic rigor with healing-centered, biophilic practice. Transforming K-12 education through trauma-informed STEAM classrooms, Living Learning Labs, and restorative relationships.</p>
+            <p class="description">A dual-purpose pedagogy that weaves academic rigor with healing-centered, biophilic practice. Built on the 5Rs Framework (Root, Regulate, Reflect, Restore, Reconnect), we transform K-12 education by addressing the impacts of adverse childhood experiences through STEAM classrooms, Living Learning Labs, and restorative relationships.</p>
             <div class="cta-buttons">
-                <button class="button-primary">Explore the Framework</button>
-                <button class="button-secondary">View Resources</button>
+                <button class="button-primary" onclick="window.location.href='#framework'">Explore the 5Rs Framework</button>
+                <button class="button-secondary" onclick="window.location.href='#resources'">Download Starter Bundle</button>
+                <button class="button-secondary" onclick="window.location.href='mailto:hearn.sa@gmail.com?subject=Professional Development Consultation'">Schedule a Consultation</button>
             </div>
         </div>
     </section>
@@ -808,12 +827,25 @@
                 </div>
                 <div class="stat-item">
                     <h3>6 Principles</h3>
-                    <p>SAMHSA Trauma-Informed</p>
+                    <p>SAMHSA-Aligned</p>
                 </div>
                 <div class="stat-item">
                     <h3>100%</h3>
                     <p>Standards-Aligned</p>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 5Rs Introduction Section -->
+    <section style="background: var(--white); padding: var(--space-xl) 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Understanding the 5Rs Framework</h2>
+                <p class="subtitle">Our evidence-based approach integrates five core phases: <strong>Root, Regulate, Reflect, Restore, and Reconnect</strong>. Each phase builds on the others to create learning environments that honor both academic excellence and students' readiness to learn.</p>
+            </div>
+            <div style="text-align: center; margin-top: var(--space-lg);">
+                <button class="button-primary" onclick="window.location.href='#framework'">Explore Each Phase in Detail</button>
             </div>
         </div>
     </section>
@@ -823,7 +855,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>The 5Rs: Our Foundation</h2>
-                <p class="subtitle">Five actionable phases that integrate academic rigor with availability to learn through relationship, regulation, and reflection.</p>
+                <p class="subtitle">Five actionable phases that integrate academic rigor with students' readiness to learn through relationship, regulation, and reflection.</p>
             </div>
             <div class="framework-grid">
                 <div class="framework-card">
@@ -860,7 +892,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Who We Serve</h2>
-                <p class="subtitle">Supporting diverse educational settings with research-backed, trauma-informed pedagogy.</p>
+                <p class="subtitle">Supporting diverse educational settings with research-backed pedagogy that addresses the impacts of adverse childhood experiences.</p>
             </div>
             <div class="audience-grid">
                 <div class="audience-card">
@@ -877,7 +909,7 @@
                 </div>
                 <div class="audience-card">
                     <h4>Alternative Education</h4>
-                    <p>Trauma-aware routines and short-cycle projects for detention, therapeutic, and justice-involved youth settings.</p>
+                    <p>Healing-centered routines and short-cycle projects for detention, therapeutic, and justice-involved youth settings.</p>
                 </div>
                 <div class="audience-card">
                     <h4>Juvenile Justice Programs</h4>
@@ -885,7 +917,7 @@
                 </div>
                 <div class="audience-card">
                     <h4>Teacher Preparation Programs</h4>
-                    <p>Graduate-level coursework, field placement models, and trauma-informed instructional frameworks for pre-service educators.</p>
+                    <p>Graduate-level coursework, field placement models, and healing-centered instructional frameworks for pre-service educators that address the impacts of adverse childhood experiences.</p>
                 </div>
             </div>
         </div>
@@ -901,7 +933,7 @@
             <div class="ecosystem-items">
                 <div class="ecosystem-item">
                     <h4>AI Lesson Generator</h4>
-                    <p>Generate trauma-informed, standards-aligned lesson plans in minutes using the 5Rs framework.</p>
+                    <p>Generate healing-centered, standards-aligned lesson plans in minutes using the 5Rs framework.</p>
                 </div>
                 <div class="ecosystem-item">
                     <h4>Professional Development</h4>
@@ -932,20 +964,20 @@
         <div class="container">
             <div class="section-header">
                 <h2>Why Root Work Framework?</h2>
-                <p class="subtitle">Evidence-based. Trauma-informed. Standards-aligned. Practically applicable.</p>
+                <p class="subtitle">Evidence-based. Healing-centered. Standards-aligned. Practically applicable.</p>
             </div>
             <div class="feature-grid">
                 <div class="feature-item">
                     <h3>🎯 Dual-Purpose Pedagogy</h3>
-                    <p>Simultaneously addresses academic rigor and availability to learn. Every lesson integrates SEL, regulation, and content mastery.</p>
+                    <p>Simultaneously addresses academic rigor and students' readiness to learn. Every lesson integrates SEL, regulation, and content mastery.</p>
                 </div>
                 <div class="feature-item">
                     <h3>📚 Standards-Aligned</h3>
-                    <p>Fully aligned with state and national standards while incorporating trauma-informed best practices.</p>
+                    <p>Fully aligned with state and national standards while incorporating healing-centered best practices that address the impacts of adverse childhood experiences.</p>
                 </div>
                 <div class="feature-item">
                     <h3>🧠 SAMHSA-Aligned</h3>
-                    <p>Built on SAMHSA's 6 principles of trauma-informed care: safety, trustworthiness, peer support, collaboration, empowerment, and cultural responsiveness.</p>
+                    <p>Built on SAMHSA's 6 principles for addressing the impacts of adverse childhood experiences: safety, trustworthiness, peer support, collaboration, empowerment, and cultural responsiveness.</p>
                 </div>
                 <div class="feature-item">
                     <h3>🌿 Biophilic Design</h3>
@@ -957,7 +989,7 @@
                 </div>
                 <div class="feature-item">
                     <h3>🔬 Research-Backed</h3>
-                    <p>Built on work from leading scholars in trauma-informed education, restorative justice, and culturally responsive pedagogy.</p>
+                    <p>Built on work from leading scholars in addressing the impacts of adverse childhood experiences, restorative justice, and culturally responsive pedagogy.</p>
                 </div>
             </div>
         </div>
@@ -976,7 +1008,7 @@
                 
                 <p>The framework is grounded in published research, including <em>"From Garden to Growth: Building Trauma-Informed STEAM Classrooms through Living Learning Labs"</em> and <em>"The Law of Learning: Education, Policy, and Legal Frameworks in K-12 Schools."</em></p>
                 
-                <p>Root Work Framework represents a commitment to transforming education into a healing practice—one that honors students' full humanity while maintaining unwavering academic expectations.</p>
+                <p>Root Work Framework represents a commitment to transforming education into a healing-centered practice—one that honors students' full humanity while maintaining unwavering academic expectations and addressing the impacts of adverse childhood experiences.</p>
             </div>
         </div>
     </section>
@@ -985,10 +1017,10 @@
     <section class="cta-section">
         <div class="container">
             <h2>Ready to Transform Your Practice?</h2>
-            <p>Join thousands of educators using the Root Work Framework to create trauma-informed, academically rigorous learning environments.</p>
+            <p>Join thousands of educators using the Root Work Framework to create healing-centered, academically rigorous learning environments that address the impacts of adverse childhood experiences.</p>
             <div class="cta-buttons">
-                <button class="button-primary">Get the Starter Bundle</button>
-                <button class="button-secondary">Explore Free Resources</button>
+                <button class="button-primary" onclick="window.location.href='#resources'">Download Starter Bundle</button>
+                <button class="button-secondary" onclick="window.location.href='#resources'">Explore Free Resources</button>
             </div>
         </div>
     </section>
@@ -999,7 +1031,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Root Work Framework</h4>
-                    <p>Transforming education through trauma-informed, healing-centered pedagogy.</p>
+                    <p>Transforming education through healing-centered pedagogy that addresses the impacts of adverse childhood experiences.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
