@@ -776,6 +776,48 @@
             }
         }
     </style>
+    
+    <style>
+  :root{
+    --fs-body: clamp(16px, 1.8vw, 18px);
+    --fs-h1: clamp(28px, 6vw, 48px);
+    --fs-h2: clamp(22px, 4.5vw, 34px);
+    --fs-h3: clamp(18px, 3.5vw, 24px);
+  }
+  body{ font-size: var(--fs-body); line-height: 1.6; }
+  h1{ font-size: var(--fs-h1); line-height: 1.15; }
+  h2{ font-size: var(--fs-h2); }
+  h3{ font-size: var(--fs-h3); }
+
+  /* Hero container should not push CTA off-screen on phones */
+  .hero{
+    display:grid; place-items:center; min-height: 70vh;
+    padding: clamp(16px, 4vw, 64px);
+    text-align:center;
+  }
+  .hero img{ max-width:100%; height:auto; object-fit:cover }
+
+  /* Sticky CTA (mobile only) */
+  .rwfw-sticky-cta{
+    position:fixed; left:0; right:0; bottom:0; z-index:50;
+    background:#0b6623; /* RootWork green */
+    padding:.75rem 1rem; text-align:center;
+  }
+  .rwfw-sticky-cta a{
+    color:#fff; font-weight:700; text-decoration:none;
+    display:inline-block; min-height:44px; line-height:44px; padding:0 .75rem; border-radius:9999px;
+    outline-offset:2px;
+  }
+  @media (min-width: 768px){ .rwfw-sticky-cta{ display:none } }
+
+  /* Safe, high-contrast primary button (thumb-friendly) */
+  .rwfw-btn{
+    display:inline-block; padding:.9rem 1.25rem; border-radius:9999px; font-weight:700;
+    font-size:1rem; line-height:1; min-height:44px; text-decoration:none;
+    background:#0b6623; color:#fff;
+  }
+  .rwfw-btn:focus-visible{ outline: 2px solid #fff; outline-offset: 2px; }
+</style>
 </head>
 <body>
     <!-- Header -->
