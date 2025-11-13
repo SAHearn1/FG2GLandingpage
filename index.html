@@ -775,6 +775,184 @@
                 font-size: 14px;
             }
         }
+        
+        /* Consultation Modal Styles (reuses newsletter modal styles) */
+        .consultation-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .consultation-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .consultation-modal-content {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--space-xl);
+            max-width: 550px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.3s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .consultation-close {
+            position: absolute;
+            top: var(--space-sm);
+            right: var(--space-sm);
+            background: none;
+            border: none;
+            font-size: 32px;
+            color: var(--leaf);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+        
+        .consultation-close:hover {
+            background: var(--canvas-light);
+            color: var(--evergreen);
+        }
+        
+        .consultation-header {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .consultation-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--space-md);
+            background: linear-gradient(135deg, var(--evergreen) 0%, var(--leaf) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+        
+        .consultation-header h3 {
+            color: var(--evergreen);
+            font-size: 28px;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .consultation-header p {
+            color: var(--leaf);
+            font-size: 16px;
+            margin: 0 auto;
+        }
+        
+        .consultation-form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+        
+        .consultation-form textarea {
+            padding: 12px 16px;
+            border: 2px solid var(--leaf);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: var(--font-sans);
+            transition: all 0.2s ease;
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .consultation-form textarea:focus {
+            outline: none;
+            border-color: var(--gold-leaf);
+            box-shadow: 0 0 0 3px rgba(212, 200, 98, 0.2);
+        }
+        
+        .consultation-submit {
+            background: var(--gold-leaf);
+            color: var(--evergreen);
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: var(--space-sm);
+        }
+        
+        .consultation-submit:hover {
+            background: var(--olive-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .consultation-submit:active {
+            transform: translateY(0);
+        }
+        
+        .consultation-privacy {
+            font-size: 12px;
+            color: var(--leaf);
+            text-align: center;
+            margin-top: var(--space-sm);
+        }
+        
+        .consultation-success {
+            display: none;
+            text-align: center;
+            padding: var(--space-xl);
+        }
+        
+        .consultation-success.active {
+            display: block;
+        }
+        
+        .consultation-success .success-icon {
+            font-size: 64px;
+            margin-bottom: var(--space-md);
+        }
+        
+        .consultation-success h3 {
+            color: var(--evergreen);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .consultation-success p {
+            color: var(--leaf);
+        }
+        
+        @media (max-width: 768px) {
+            .consultation-modal-content {
+                padding: var(--space-lg);
+                margin: var(--space-md);
+            }
+            
+            .consultation-header h3 {
+                font-size: 24px;
+            }
+            
+            .consultation-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
+        }
     </style>
     
     <style>
@@ -849,7 +1027,8 @@
             <p class="description">A dual-purpose pedagogy that weaves academic rigor with healing-centered, biophilic practice. Built on the 5Rs Framework (Root, Regulate, Reflect, Restore, Reconnect), we transform K-12 education by addressing the impacts of adverse childhood experiences through STEAM classrooms, Living Learning Labs, and restorative relationships.</p>
             <div class="cta-buttons">
                 <button class="button-primary" onclick="window.location.href='#framework'">Explore the 5Rs Framework</button>
-                <button class="button-secondary" onclick="window.location.href='mailto:hearn.sa@gmail.com?subject=Professional Development Consultation'">Schedule a Consultation</button>
+                <button class="button-secondary" onclick="window.location.href='#resources'">Download Starter Bundle</button>
+                <button class="button-secondary" onclick="openConsultationModal()">Schedule a Consultation</button>
             </div>
         </div>
     </section>
@@ -1251,6 +1430,184 @@
                 
                 // Hide trigger button
                 trigger.classList.add('hidden');
+                
+                // Constants for timing
+                const SUCCESS_DISPLAY_TIME = 3000; // Show success message for 3 seconds
+                const FORM_RESET_DELAY = 500; // Wait for modal close animation before resetting
+                
+                // Close modal after showing success message
+                setTimeout(() => {
+                    closeModal();
+                    // Reset form after modal close animation completes
+                    setTimeout(() => {
+                        form.style.display = 'flex';
+                        successMessage.classList.remove('active');
+                        form.reset();
+                    }, FORM_RESET_DELAY);
+                }, SUCCESS_DISPLAY_TIME);
+            });
+            
+            // Close on ESC key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
+
+    <!-- Consultation Modal -->
+    <div class="consultation-modal" id="consultationModal">
+        <div class="consultation-modal-content">
+            <button class="consultation-close" id="consultationClose" aria-label="Close modal">&times;</button>
+            
+            <div class="consultation-header">
+                <div class="consultation-icon">📅</div>
+                <h3>Schedule a Consultation</h3>
+                <p>Connect with us to discuss professional development, curriculum implementation, or partnership opportunities</p>
+            </div>
+            
+            <form class="consultation-form" id="consultationForm">
+                <div class="form-group">
+                    <label for="consultation-name">Name *</label>
+                    <input 
+                        type="text" 
+                        id="consultation-name" 
+                        name="name" 
+                        placeholder="Your full name" 
+                        required
+                    />
+                </div>
+                
+                <div class="form-group">
+                    <label for="consultation-email">Email Address *</label>
+                    <input 
+                        type="email" 
+                        id="consultation-email" 
+                        name="email" 
+                        placeholder="your.email@example.com" 
+                        required
+                    />
+                </div>
+                
+                <div class="form-group">
+                    <label for="consultation-phone">Phone Number</label>
+                    <input 
+                        type="tel" 
+                        id="consultation-phone" 
+                        name="phone" 
+                        placeholder="(555) 123-4567"
+                    />
+                </div>
+                
+                <div class="form-group">
+                    <label for="consultation-organization">Organization/School</label>
+                    <input 
+                        type="text" 
+                        id="consultation-organization" 
+                        name="organization" 
+                        placeholder="Your school or organization name"
+                    />
+                </div>
+                
+                <div class="form-group">
+                    <label for="consultation-interest">I'm interested in... *</label>
+                    <select id="consultation-interest" name="interest" required>
+                        <option value="">Select an option</option>
+                        <option value="professional-development">Professional Development Workshop</option>
+                        <option value="curriculum-implementation">Curriculum Implementation Support</option>
+                        <option value="consultation">Individual or School Consultation</option>
+                        <option value="speaking">Speaking Engagement</option>
+                        <option value="partnership">Partnership Opportunity</option>
+                        <option value="living-learning-lab">Living Learning Lab Design</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="consultation-message">Tell us more about your needs</label>
+                    <textarea 
+                        id="consultation-message" 
+                        name="message" 
+                        placeholder="Share any specific questions, goals, or details about your consultation request..."
+                    ></textarea>
+                </div>
+                
+                <button type="submit" class="consultation-submit">
+                    Submit Request 📅
+                </button>
+                
+                <p class="consultation-privacy">
+                    Your information is confidential. We'll respond within 2 business days.
+                </p>
+            </form>
+            
+            <div class="consultation-success" id="consultationSuccess">
+                <div class="success-icon">✅</div>
+                <h3>Request Received!</h3>
+                <p>Thank you for your interest. We'll review your request and reach out within 2 business days to schedule your consultation.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Consultation Modal Functionality
+        (function() {
+            const modal = document.getElementById('consultationModal');
+            const close = document.getElementById('consultationClose');
+            const form = document.getElementById('consultationForm');
+            const successMessage = document.getElementById('consultationSuccess');
+            
+            // Make openConsultationModal available globally
+            window.openConsultationModal = function() {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            };
+            
+            // Close modal
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            // Event listeners
+            close.addEventListener('click', closeModal);
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            
+            // Handle form submission
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = {
+                    name: document.getElementById('consultation-name').value,
+                    email: document.getElementById('consultation-email').value,
+                    phone: document.getElementById('consultation-phone').value,
+                    organization: document.getElementById('consultation-organization').value,
+                    interest: document.getElementById('consultation-interest').value,
+                    message: document.getElementById('consultation-message').value,
+                    timestamp: new Date().toISOString()
+                };
+                
+                // TODO: Replace with actual backend API call in production
+                // Example: fetch('/api/consultation/request', { method: 'POST', body: JSON.stringify(formData) })
+                // For demonstration only - do not use in production as it exposes user data
+                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                    console.log('Consultation Request (demo only):', formData);
+                    // Store in localStorage for demonstration purposes only
+                    let requests = JSON.parse(localStorage.getItem('consultationRequests') || '[]');
+                    requests.push(formData);
+                    localStorage.setItem('consultationRequests', JSON.stringify(requests));
+                }
+                
+                // Show success message
+                form.style.display = 'none';
+                successMessage.classList.add('active');
                 
                 // Constants for timing
                 const SUCCESS_DISPLAY_TIME = 3000; // Show success message for 3 seconds
