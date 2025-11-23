@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Joyful growth - smiling plant with sparkles -->
+  <g fill="#C4A962">
+    <!-- Sparkles/rays -->
+    <rect x="240" y="80" width="32" height="70" rx="16"/>
+    <rect x="160" y="120" width="32" height="70" rx="16" transform="rotate(-30 176 155)"/>
+    <rect x="100" y="180" width="32" height="70" rx="16" transform="rotate(-60 116 215)"/>
+    <rect x="320" y="120" width="32" height="70" rx="16" transform="rotate(30 336 155)"/>
+    <rect x="380" y="180" width="32" height="70" rx="16" transform="rotate(60 396 215)"/>
+
+    <!-- Leaves -->
+    <path d="M180 240c-15-20-25-42-28-60-5 18-15 40-30 60-10 15-5 32 8 42 13 10 32 12 48 5 16-7 18-30 2-47z"/>
+    <path d="M256 210c0-18-10-36-15-50-5 14-15 32-15 50 0 13 7 24 15 24s15-11 15-24z"/>
+    <path d="M332 240c15-20 25-42 28-60 5 18 15 40 30 60 10 15 5 32-8 42-13 10-32 12-48 5-16-7-18-30-2-47z"/>
+
+    <!-- Stem -->
+    <rect x="244" y="280" width="24" height="100" rx="5"/>
+
+    <!-- Smile/arc -->
+    <path d="M200 350c0 30 25 55 56 55s56-25 56-55" stroke="#C4A962" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <path d="M256 380c-17 0-30-13-30-30h60c0 17-13 30-30 30z" fill="#C4A962"/>
+
+    <!-- Eyes (happy) -->
+    <path d="M220 330c0-8 6-14 14-14s14 6 14 14-6 14-14 14-14-6-14-14z"/>
+    <path d="M264 330c0-8 6-14 14-14s14 6 14 14-6 14-14 14-14-6-14-14z"/>
+  </g>
+</svg>
