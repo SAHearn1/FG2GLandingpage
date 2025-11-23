@@ -292,6 +292,13 @@
             justify-content: center;
             margin: 0 auto var(--space-md);
             font-size: 28px;
+            padding: 12px;
+        }
+
+        .framework-card .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         
         .framework-card h3 {
@@ -324,8 +331,18 @@
         .feature-item h3 {
             color: var(--evergreen);
             margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        
+
+        .inline-icon {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
         /* Audience Sections */
         .audience-grid {
             display: grid;
@@ -614,6 +631,13 @@
             align-items: center;
             justify-content: center;
             font-size: 40px;
+            padding: 16px;
+        }
+
+        .newsletter-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         
         .newsletter-header h3 {
@@ -766,6 +790,7 @@
                 width: 60px;
                 height: 60px;
                 font-size: 30px;
+                padding: 12px;
             }
             
             .newsletter-trigger {
@@ -1079,27 +1104,27 @@
             </div>
             <div class="framework-grid">
                 <div class="framework-card">
-                    <div class="icon">🌱</div>
+                    <div class="icon"><img src="icons/tree-roots.svg" alt="Root - Tree with deep roots icon"></div>
                     <h3>Root</h3>
                     <p>Connect to purpose, culture, and place. Ground learning in students' identities and community contexts.</p>
                 </div>
                 <div class="framework-card">
-                    <div class="icon">🌊</div>
+                    <div class="icon"><img src="icons/hands-nurture.svg" alt="Regulate - Nurturing hands icon"></div>
                     <h3>Regulate</h3>
                     <p>Prepare mind and body for learning through rituals, rhythms, and co-regulation practices.</p>
                 </div>
                 <div class="framework-card">
-                    <div class="icon">💭</div>
+                    <div class="icon"><img src="icons/head-brain.svg" alt="Reflect - Mindful thinking icon"></div>
                     <h3>Reflect</h3>
                     <p>Encourage self-assessment, metacognition, and meaning-making through structured reflection.</p>
                 </div>
                 <div class="framework-card">
-                    <div class="icon">🔄</div>
+                    <div class="icon"><img src="icons/growth-joy.svg" alt="Restore - Growth and renewal icon"></div>
                     <h3>Restore</h3>
                     <p>Address harm, repair relationships, and rebuild trust through restorative practices.</p>
                 </div>
                 <div class="framework-card">
-                    <div class="icon">🌍</div>
+                    <div class="icon"><img src="icons/tree-simple.svg" alt="Reconnect - Community tree icon"></div>
                     <h3>Reconnect</h3>
                     <p>Apply learning to community and environment, fostering agency and civic engagement.</p>
                 </div>
@@ -1196,7 +1221,7 @@
                     <p>Fully aligned with state and national standards while incorporating healing-centered best practices that address the impacts of adverse childhood experiences.</p>
                 </div>
                 <div class="feature-item">
-                    <h3>🧠 SAMHSA-Aligned</h3>
+                    <h3><img src="icons/head-brain.svg" alt="Brain icon" class="inline-icon"> SAMHSA-Aligned</h3>
                     <p>Built on SAMHSA's 6 principles for addressing the impacts of adverse childhood experiences: safety, trustworthiness, peer support, collaboration, empowerment, and cultural responsiveness.</p>
                 </div>
                 <div class="feature-item">
@@ -1299,7 +1324,7 @@
             <button class="newsletter-close" id="newsletterClose" aria-label="Close modal">&times;</button>
             
             <div class="newsletter-header">
-                <div class="newsletter-icon">🌱</div>
+                <div class="newsletter-icon"><img src="icons/tree-roots.svg" alt="RootWork Network icon"></div>
                 <h3>Join the RootWork Network</h3>
                 <p>Get free monthly teacher tools & updates delivered to your inbox</p>
             </div>
