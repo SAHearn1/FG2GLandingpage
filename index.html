@@ -990,7 +990,6 @@
             background: var(--evergreen);
             border: 3px solid var(--gold-leaf);
             color: var(--gold-leaf);
-            font-size: 26px;
             cursor: pointer;
             box-shadow: 0 4px 14px rgba(0,0,0,0.35);
             z-index: 1100;
@@ -1004,9 +1003,13 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.45);
         }
         #rooty-toggle .rooty-icon-open  { display: flex; }
-        #rooty-toggle .rooty-icon-close { display: none; }
+        #rooty-toggle .rooty-icon-close { display: none; font-size: 20px; }
         #rooty-toggle.open .rooty-icon-open  { display: none; }
         #rooty-toggle.open .rooty-icon-close { display: flex; }
+        #rooty-toggle .rooty-icon-open img {
+            width: 32px;
+            height: 32px;
+        }
 
         /* Chat window */
         #rooty-window {
@@ -1043,8 +1046,13 @@
             gap: 10px;
         }
         .rooty-header-avatar {
-            font-size: 22px;
-            line-height: 1;
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+        }
+        .rooty-header-avatar img {
+            width: 100%;
+            height: 100%;
         }
         .rooty-header-info {
             flex: 1;
@@ -1549,13 +1557,13 @@
 
     <!-- Rooty Chatbot Widget -->
     <button id="rooty-toggle" aria-label="Chat with Rooty">
-        <span class="rooty-icon-open">🌱</span>
+        <span class="rooty-icon-open"><img src="icons/tree-simple.svg" alt=""></span>
         <span class="rooty-icon-close">✕</span>
     </button>
 
     <div id="rooty-window" role="dialog" aria-label="Rooty chat assistant">
         <div class="rooty-header">
-            <div class="rooty-header-avatar">🌱</div>
+            <div class="rooty-header-avatar"><img src="icons/tree-simple.svg" alt="Rooty"></div>
             <div class="rooty-header-info">
                 <div class="rooty-header-name">Rooty</div>
                 <div class="rooty-header-sub">Root Work Framework Guide</div>
