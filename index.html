@@ -283,22 +283,18 @@
         }
         
         .framework-card .icon {
-            width: 60px;
-            height: 60px;
-            background: var(--evergreen);
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
             margin: 0 auto var(--space-md);
-            font-size: 28px;
-            padding: 12px;
         }
 
         .framework-card .icon img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
+            display: block;
         }
         
         .framework-card h3 {
