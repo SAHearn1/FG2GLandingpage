@@ -5,7 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Root Work Framework – Rerooted Learning: Where Academics and Healing Grow Together</title>
     <meta name="description" content="The Root Work Framework is a dual-purpose pedagogy that weaves academic rigor with healing-centered, biophilic practice. Built on the 5Rs Framework (Root, Regulate, Reflect, Restore, Reconnect). Serving K-12 educators, homeschool families, charter schools, and alternative education programs.">
-    
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fg2g-rwfw.com/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/icons/tree-simple.svg" />
+    <link rel="icon" type="image/png" href="/icons/root.png" />
+    <link rel="apple-touch-icon" href="/icons/root.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Root Work Framework" />
+    <meta property="og:title" content="Root Work Framework – Rerooted Learning: Where Academics and Healing Grow Together" />
+    <meta property="og:description" content="A healing-centered, trauma-informed pedagogy built on the 5Rs Framework. Tools and resources for K-12 educators, homeschool families, charter schools, and alternative education programs." />
+    <meta property="og:image" content="https://fg2g-rwfw.com/icons/root.png" />
+    <meta property="og:url" content="https://fg2g-rwfw.com/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Root Work Framework – Rerooted Learning" />
+    <meta name="twitter:description" content="A healing-centered, trauma-informed pedagogy built on the 5Rs Framework. For K-12 educators, homeschool families, and alternative education programs." />
+    <meta name="twitter:image" content="https://fg2g-rwfw.com/icons/root.png" />
+
+    <!-- JSON-LD Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Root Work Framework",
+      "url": "https://fg2g-rwfw.com/",
+      "logo": "https://fg2g-rwfw.com/icons/root.png",
+      "description": "A healing-centered, trauma-informed pedagogical system created by Dr. Shawn A. Hearn, Ed.D., J.D. Built on the 5Rs Framework: Root, Regulate, Reflect, Restore, Reconnect.",
+      "email": "hearn.sa@gmail.com",
+      "founder": {
+        "@type": "Person",
+        "name": "Dr. Shawn A. Hearn",
+        "honorificPrefix": "Dr.",
+        "jobTitle": "Founder & Educational Consultant"
+      },
+      "sameAs": [
+        "https://www.youtube.com/@rootworkframework"
+      ]
+    }
+    </script>
+
     <style>
         /* ============================================
            ROOT WORK FRAMEWORK BRAND STANDARDS v1.0
@@ -1781,47 +1825,51 @@
             });
             
             // Handle form submission
-            form.addEventListener('submit', (e) => {
+            form.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                
-                // Get form data
+
+                const submitBtn = form.querySelector('.newsletter-submit');
+                if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Subscribing…'; }
+
                 const formData = {
                     name: document.getElementById('newsletter-name').value,
                     email: document.getElementById('newsletter-email').value,
-                    role: document.getElementById('newsletter-role').value,
-                    timestamp: new Date().toISOString()
+                    role: document.getElementById('newsletter-role').value
                 };
-                
-                // TODO: Replace with actual backend API call in production
-                // Example: fetch('/api/newsletter/subscribe', { method: 'POST', body: JSON.stringify(formData) })
-                // For demonstration only - do not use in production as it exposes user data
-                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                    console.log('Newsletter Signup (demo only):', formData);
-                    // Store in localStorage for demonstration purposes only
-                    let signups = JSON.parse(localStorage.getItem('newsletterSignups') || '[]');
-                    signups.push(formData);
-                    localStorage.setItem('newsletterSignups', JSON.stringify(signups));
+
+                try {
+                    const res = await fetch('/api/newsletter', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+                    if (!res.ok) {
+                        const errData = await res.json().catch(() => ({}));
+                        throw new Error(errData.error || 'Signup failed. Please try again.');
+                    }
+                } catch (err) {
+                    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Join the Movement'; }
+                    alert(err.message || 'Something went wrong. Please try again.');
+                    return;
                 }
-                
+
                 // Show success message
                 form.style.display = 'none';
                 successMessage.classList.add('active');
-                
+
                 // Hide trigger button
                 trigger.classList.add('hidden');
-                
-                // Constants for timing
-                const SUCCESS_DISPLAY_TIME = 3000; // Show success message for 3 seconds
-                const FORM_RESET_DELAY = 500; // Wait for modal close animation before resetting
-                
-                // Close modal after showing success message
+
+                const SUCCESS_DISPLAY_TIME = 3000;
+                const FORM_RESET_DELAY = 500;
+
                 setTimeout(() => {
                     closeModal();
-                    // Reset form after modal close animation completes
                     setTimeout(() => {
                         form.style.display = 'flex';
                         successMessage.classList.remove('active');
                         form.reset();
+                        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Join the Movement'; }
                     }, FORM_RESET_DELAY);
                 }, SUCCESS_DISPLAY_TIME);
             });
@@ -1959,31 +2007,37 @@
             });
             
             // Handle form submission
-            form.addEventListener('submit', (e) => {
+            form.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                
-                // Get form data
+
+                const submitBtn = form.querySelector('.consultation-submit');
+                if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Submitting…'; }
+
                 const formData = {
                     name: document.getElementById('consultation-name').value,
                     email: document.getElementById('consultation-email').value,
                     phone: document.getElementById('consultation-phone').value,
                     organization: document.getElementById('consultation-organization').value,
                     interest: document.getElementById('consultation-interest').value,
-                    message: document.getElementById('consultation-message').value,
-                    timestamp: new Date().toISOString()
+                    message: document.getElementById('consultation-message').value
                 };
-                
-                // TODO: Replace with actual backend API call in production
-                // Example: fetch('/api/consultation/request', { method: 'POST', body: JSON.stringify(formData) })
-                // For demonstration only - do not use in production as it exposes user data
-                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                    console.log('Consultation Request (demo only):', formData);
-                    // Store in localStorage for demonstration purposes only
-                    let requests = JSON.parse(localStorage.getItem('consultationRequests') || '[]');
-                    requests.push(formData);
-                    localStorage.setItem('consultationRequests', JSON.stringify(requests));
+
+                try {
+                    const res = await fetch('/api/consultation', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+                    if (!res.ok) {
+                        const errData = await res.json().catch(() => ({}));
+                        throw new Error(errData.error || 'Submission failed. Please try again.');
+                    }
+                } catch (err) {
+                    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Request Consultation'; }
+                    alert(err.message || 'Something went wrong. Please try again.');
+                    return;
                 }
-                
+
                 // Show success message
                 form.style.display = 'none';
                 successMessage.classList.add('active');
@@ -2000,10 +2054,12 @@
                         form.style.display = 'flex';
                         successMessage.classList.remove('active');
                         form.reset();
+                        const submitBtn = form.querySelector('.consultation-submit');
+                        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Request Consultation'; }
                     }, FORM_RESET_DELAY);
                 }, SUCCESS_DISPLAY_TIME);
             });
-            
+
             // Close on ESC key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && modal.classList.contains('active')) {
@@ -2245,5 +2301,8 @@
             if (front && back) back.src = front.src;
         })();
     </script>
+
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

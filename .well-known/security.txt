@@ -1,0 +1,10 @@
+Contact: mailto:hearn.sa@gmail.com
+Expires: 2027-01-01T00:00:00.000Z
+Policy: https://fg2g-rwfw.com/security-policy
+Preferred-Languages: en
+
+# Root Work Framework — Security Policy
+# If you discover a security vulnerability on fg2g-rwfw.com,
+# please report it responsibly by emailing hearn.sa@gmail.com.
+# We will respond within 5 business days and credit researchers
+# who follow responsible disclosure practices.
