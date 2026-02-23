@@ -1950,14 +1950,19 @@
 
             function loadVoice() {
                 const voices = window.speechSynthesis.getVoices();
-                // Prefer a warm female US-English voice
+                // Priority: Microsoft/Google neural voices first (most natural),
+                // then macOS high-quality voices, then any en-US fallback
                 preferredVoice =
-                    voices.find(v => v.name.includes('Samantha')) ||
-                    voices.find(v => v.name.includes('Karen'))    ||
-                    voices.find(v => v.name.includes('Moira'))    ||
-                    voices.find(v => /en[-_]US/i.test(v.lang) && v.name.toLowerCase().includes('female')) ||
-                    voices.find(v => /en[-_]US/i.test(v.lang))   ||
-                    voices.find(v => /en/i.test(v.lang))         ||
+                    voices.find(v => v.name === 'Microsoft Aria Online (Natural) - English (United States)') ||
+                    voices.find(v => v.name === 'Microsoft Jenny Online (Natural) - English (United States)') ||
+                    voices.find(v => v.name === 'Microsoft Aria - English (United States)')  ||
+                    voices.find(v => v.name === 'Google US English')                         ||
+                    voices.find(v => v.name.includes('Samantha'))                            ||
+                    voices.find(v => v.name.includes('Karen'))                               ||
+                    voices.find(v => v.name.includes('Moira'))                               ||
+                    voices.find(v => /en[-_]US/i.test(v.lang) && /natural|neural|online/i.test(v.name)) ||
+                    voices.find(v => /en[-_]US/i.test(v.lang))                              ||
+                    voices.find(v => /en/i.test(v.lang))                                     ||
                     null;
             }
 
@@ -1966,12 +1971,24 @@
                 window.speechSynthesis.onvoiceschanged = loadVoice;
             }
 
+            function cleanForSpeech(text) {
+                return text
+                    .replace(/\*\*(.*?)\*\*/g, '$1')   // strip **bold**
+                    .replace(/\*(.*?)\*/g, '$1')        // strip *italic*
+                    .replace(/`[^`]*`/g, '')            // strip `code`
+                    .replace(/#+\s/g, '')               // strip ## headings
+                    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // links → label only
+                    .replace(/\s{2,}/g, ' ')
+                    .trim();
+            }
+
             function speak(text) {
                 if (muted || !window.speechSynthesis) return;
                 window.speechSynthesis.cancel();
-                const utt = new SpeechSynthesisUtterance(text);
-                utt.rate  = 0.95;
-                utt.pitch = 1.05;
+                const utt = new SpeechSynthesisUtterance(cleanForSpeech(text));
+                utt.rate  = 0.88;
+                utt.pitch = 1.0;
+                utt.volume = 1.0;
                 if (preferredVoice) utt.voice = preferredVoice;
                 window.speechSynthesis.speak(utt);
             }
