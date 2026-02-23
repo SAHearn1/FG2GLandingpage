@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/savannah-initiative",
+      "destination": "/savannah-initiative.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
