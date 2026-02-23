@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Balance scales for social justice -->
+  <g fill="#C4A962">
+    <!-- Vertical post -->
+    <rect x="244" y="80" width="24" height="320" rx="8"/>
+    <!-- Base -->
+    <rect x="160" y="400" width="192" height="32" rx="10"/>
+    <!-- Horizontal beam -->
+    <rect x="80" y="152" width="352" height="20" rx="10"/>
+    <!-- Left pan chain left -->
+    <rect x="110" y="168" width="12" height="70" rx="6"/>
+    <!-- Left pan chain right -->
+    <rect x="150" y="168" width="12" height="70" rx="6"/>
+    <!-- Left pan -->
+    <path d="M96 238h80l-12 40H108z"/>
+    <!-- Right pan chain left -->
+    <rect x="350" y="168" width="12" height="70" rx="6"/>
+    <!-- Right pan chain right -->
+    <rect x="390" y="168" width="12" height="70" rx="6"/>
+    <!-- Right pan -->
+    <path d="M336 238h80l-12 40H348z"/>
+    <!-- Center pivot circle -->
+    <circle cx="256" cy="162" r="18"/>
+  </g>
+</svg>

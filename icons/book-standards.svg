@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Open book for standards-aligned -->
+  <g fill="#C4A962">
+    <!-- Left page -->
+    <path d="M80 144c0-26.51 21.49-48 48-48h116v288H128c-26.51 0-48-21.49-48-48V144z"/>
+    <!-- Right page -->
+    <path d="M432 144v192c0 26.51-21.49 48-48 48H268V96h116c26.51 0 48 21.49 48 48z"/>
+    <!-- Spine -->
+    <rect x="250" y="96" width="12" height="288" rx="4"/>
+    <!-- Lines on left page -->
+    <rect x="110" y="176" width="108" height="14" rx="7" fill="#082A19" opacity="0.25"/>
+    <rect x="110" y="208" width="85" height="14" rx="7" fill="#082A19" opacity="0.25"/>
+    <rect x="110" y="240" width="95" height="14" rx="7" fill="#082A19" opacity="0.25"/>
+    <rect x="110" y="272" width="75" height="14" rx="7" fill="#082A19" opacity="0.25"/>
+    <!-- Lines on right page -->
+    <rect x="294" y="176" width="108" height="14" rx="7" fill="#082A19" opacity="0.25"/>
+    <rect x="294" y="208" width="85" height="14" rx="7" fill="#082A19" opacity="0.25"/>
+    <rect x="294" y="240" width="95" height="14" rx="7" fill="#082A19" opacity="0.25"/>
+    <rect x="294" y="272" width="75" height="14" rx="7" fill="#082A19" opacity="0.25"/>
+  </g>
+</svg>
