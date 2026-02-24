@@ -104,7 +104,7 @@ This document tracks the comprehensive gap analysis performed on 2026-02-24 and 
 
 | # | Issue | Status |
 |---|-------|--------|
-| S.1 | Add FAQ schema (JSON-LD) | Planned (no clear FAQ section found in index.html) |
+| S.1 | Add FAQ schema (JSON-LD) | ✅ Done — 10-question FAQPage JSON-LD added to index.html `<head>` |
 | S.2 | Add BreadcrumbList schema | ✅ Done |
 | S.3 | Fix og:image dimensions to 1200x630 | ✅ Done — commit 2dc2e3b (icons/og-image.png generated 1200×630) |
 | S.4 | Fix missing alt text on 1 image | ✅ Done (all images confirmed with alt text) |
@@ -139,11 +139,10 @@ approved by the project owner.
 | ~~S.3~~ | ~~Fix og:image to 1200×630~~ | Medium | AGENT-SEO | ✅ Done — commit `2dc2e3b` |
 | ~~P4-4~~ | ~~Add Husky + lint-staged pre-commit hooks~~ | Medium | AGENT-DEVEX | ✅ Done — commit `9346f1f` |
 | ~~P4-5~~ | ~~Add build/minification pipeline~~ | Medium | AGENT-DEVEX | ✅ Done — commit `7212ea1` |
-| P3-8 | PWA service worker + manifest | Low | DEFERRED | Wave 2 — separate session |
-| S.1 | FAQ schema (FAQPage JSON-LD) | Medium | BLOCKED | Needs FAQ content from Dr. Hearn |
-| UX-1 | Testimonials / case studies section | Medium | BLOCKED | Needs client content |
+| ~~S.1~~ | ~~FAQ schema (FAQPage JSON-LD)~~ | Medium | AGENT-SEO | ✅ Done — 10-question FAQPage JSON-LD, index.html |
+| P3-8 | PWA service worker + manifest | Low | DEFERRED | Wave 3 — planning session scheduled |
 
-**Wave 2 blocked items** (S.1, UX-1, P3-8) require human input before any agent is assigned.
+**Remaining open item:** P3-8 PWA requires a dedicated planning session (see PWA Planning section below).
 
 ---
 
@@ -349,16 +348,22 @@ Add `dist/` to `.gitignore`.
 
 ---
 
-### Wave 2 — Blocked Items (Human Input Required)
+### Wave 2 — Complete
 
-These items have GitHub issues filed but WILL NOT be executed by any agent until
-Dr. Hearn provides content or makes a decision.
+All Wave 2 items resolved:
 
-| Item | What's needed | GitHub Issue |
-|------|--------------|-------------|
-| S.1 FAQ schema | A designated FAQ section in index.html with real Q&A content | Filed in Wave 0 |
-| UX-1 Testimonials | Real testimonials/case studies from clients | Filed in Wave 0 |
-| P3-8 PWA | Separate planning session — involves service worker, manifest, offline strategy | Filed in Wave 0 |
+| Item | Resolution |
+|------|-----------|
+| ~~S.1 FAQ schema~~ | ✅ Done — 10-question FAQPage JSON-LD implemented using existing site content |
+| ~~UX-1 Testimonials~~ | Removed — deferred indefinitely; requires client content not yet available |
+
+---
+
+### Wave 3 — PWA Planning Session
+
+**Scope:** P3-8 — Progressive Web App (service worker + web app manifest)
+**Status:** Requires dedicated planning session before execution
+**See:** PWA Planning section below for full spec
 
 ---
 
@@ -417,10 +422,95 @@ Dr. Hearn provides content or makes a decision.
   - [x] AGENT-DEVEX: P4-4 complete — commit `9346f1f` (Husky + lint-staged, .husky/pre-commit)
   - [x] AGENT-DEVEX: P4-5 complete — commit `7212ea1` (build.js: styles 45% smaller, scripts 41% smaller)
 - [x] Wave 1 validation: PASSED — clean working tree, no conflicts, all files verified
-- [ ] Wave 2: await human content input
-  - [ ] S.1 FAQ schema (pending Dr. Hearn FAQ content)
-  - [ ] UX-1 Testimonials (pending client content)
-  - [ ] P3-8 PWA (separate planning session)
+- [x] Wave 2: S.1 FAQ schema complete (10-question FAQPage JSON-LD, no FAQ section required — built from site content)
+  - [x] S.1 FAQ schema — implemented directly from existing framework content
+  - [x] UX-1 Testimonials — removed from scope; deferred until client content is available
+- [ ] Wave 3: PWA planning session — see PWA Planning section
+
+---
+
+## PWA Planning Session — P3-8
+
+> **Status:** Planned — not yet executed
+> **Issue:** P3-8 | Priority: Low
+> **Branch:** `claude/github-issues-gap-analysis-wHR7K` (or new branch for Wave 3)
+
+### Goal
+
+Convert the Root Work Framework site to a Progressive Web App (PWA) to enable:
+- **Offline access** — educators can reference the 5Rs Framework without an internet connection
+- **Home screen install** — one-tap install on Android and iOS for frequent users
+- **Faster repeat loads** — service worker caches assets so returning visitors skip the network
+
+### Scope & Deliverables
+
+| # | Deliverable | File | Notes |
+|---|------------|------|-------|
+| PWA-1 | Web App Manifest | `/manifest.json` | App name, icons, theme color, display mode |
+| PWA-2 | Service Worker | `/sw.js` | Cache-first strategy for static assets |
+| PWA-3 | Manifest link tags | All 6 HTML pages | `<link rel="manifest" href="/manifest.json">` |
+| PWA-4 | SW registration | `scripts.js` | `navigator.serviceWorker.register('/sw.js')` |
+| PWA-5 | Offline fallback | `/offline.html` | Minimal branded offline page |
+
+### Manifest Spec (`/manifest.json`)
+
+```json
+{
+  "name": "Root Work Framework",
+  "short_name": "RootWork",
+  "description": "Healing-centered, trauma-informed pedagogy built on the 5Rs Framework.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#082A19",
+  "theme_color": "#C9A84C",
+  "icons": [
+    { "src": "/icons/root.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/root.webp", "sizes": "192x192", "type": "image/webp" },
+    { "src": "/icons/og-image.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
+```
+
+### Service Worker Strategy
+
+**Cache name:** `rwfw-v1`
+
+**Cache-first assets (precache on install):**
+- `/` (index.html)
+- `/styles.css`
+- `/scripts.js`
+- `/icons/logo.webp`
+- `/icons/root.webp`, `regulate.webp`, `reflect.webp`, `restore.webp`, `reconnect.webp`
+- `/offline.html`
+
+**Network-first assets (never cache):**
+- `/api/*` — all serverless API routes (must always be fresh)
+
+**Stale-while-revalidate:**
+- `/savannah-initiative`, `/privacy`, `/terms`, `/security-policy`
+
+### Hard Constraints
+
+- **Vercel static hosting** — service workers on Vercel require the SW file to be at repo root and served from the same origin. No build step needed — `/sw.js` is served as a static file.
+- **No breaking changes** — site must remain 100% functional with JS disabled (SW is progressive enhancement only).
+- **Cache versioning** — SW must increment cache name (`rwfw-v2`, etc.) on each deploy to bust stale caches. Document the version bump procedure in README.
+- **API routes exempt** — `/api/*` must NEVER be intercepted by the service worker to avoid stale responses.
+- **iOS limitations** — iOS Safari supports service workers but not push notifications or background sync; do not plan features that depend on these.
+
+### Pre-session Checklist (Before Execution)
+
+- [ ] Confirm Vercel serves `/sw.js` with correct headers (`Service-Worker-Allowed: /`)
+- [ ] Verify `vercel.json` CSP includes `worker-src 'self'` (currently may be missing)
+- [ ] Generate proper 192×192 and 512×512 icons from `icons/root.png` (current icons are 1024×1024 — need resizing)
+- [ ] Decide cache versioning strategy (manual bump vs. automated hash)
+
+### CSP Change Required
+
+Current `vercel.json` CSP does not include `worker-src`. Must add before SW registration will work:
+```
+worker-src 'self'
+```
+This is a `vercel.json` change — coordinate with project owner before executing.
 
 ---
 
