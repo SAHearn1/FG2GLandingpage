@@ -4,6 +4,8 @@
 .env.local
 .env.production
 .env.development
+# Allow the example template (contains no secrets)
+!.env.example
 
 # Vercel
 .vercel

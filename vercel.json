@@ -9,6 +9,18 @@
       "destination": "/savannah-initiative.html"
     },
     {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/security-policy",
+      "destination": "/security-policy.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

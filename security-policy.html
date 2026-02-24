@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Security Policy for Root Work Framework — how to report vulnerabilities and our responsible disclosure process.">
+  <link rel="canonical" href="https://fg2g-rwfw.com/security-policy">
+  <title>Security Policy — Root Work Framework</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #F2F4CA;
+      color: #082A19;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    header {
+      background-color: #082A19;
+      color: #F2F4CA;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    header a {
+      color: #F2F4CA;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 3rem auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #082A19;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #082A19;
+      padding-bottom: 0.5rem;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+      color: #082A19;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #082A19;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    a {
+      color: #082A19;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    code {
+      background-color: #e8eab8;
+      padding: 0.1em 0.4em;
+      border-radius: 3px;
+      font-size: 0.92em;
+      font-family: monospace;
+    }
+
+    footer {
+      background-color: #082A19;
+      color: #F2F4CA;
+      text-align: center;
+      padding: 1.5rem 2rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #F2F4CA;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/">Root Work Framework</a>
+  </header>
+
+  <main>
+    <h1>Security Policy</h1>
+
+    <p class="intro">Root Work Framework takes the security of our users' data and our systems seriously.</p>
+
+    <section>
+      <h2>Reporting a Vulnerability</h2>
+      <p>If you discover a security vulnerability, please disclose it responsibly by emailing us at <a href="mailto:hearn.sa@gmail.com">hearn.sa@gmail.com</a>.</p>
+      <p>We will respond within <strong>5 business days</strong> to acknowledge your report and outline next steps.</p>
+      <p>Please include the following in your report:</p>
+      <ul>
+        <li>A clear description of the vulnerability</li>
+        <li>Steps to reproduce the issue</li>
+        <li>The potential impact of the vulnerability</li>
+      </ul>
+      <p>We credit researchers who follow responsible disclosure practices in our acknowledgements.</p>
+    </section>
+
+    <section>
+      <h2>Scope</h2>
+      <p><strong>In scope:</strong></p>
+      <ul>
+        <li>The main site: <code>fg2g-rwfw.com</code></li>
+        <li>API endpoints: <code>/api/chat</code>, <code>/api/newsletter</code>, <code>/api/consultation</code>, <code>/api/unsubscribe</code></li>
+      </ul>
+      <p><strong>Out of scope:</strong></p>
+      <ul>
+        <li>Third-party services we rely on, including Vercel infrastructure, n8n, and the Anthropic API</li>
+      </ul>
+      <p>Please report vulnerabilities in third-party services directly to those providers.</p>
+    </section>
+
+    <section>
+      <h2>Safe Harbor</h2>
+      <p>We will not pursue legal action against researchers who discover and report security vulnerabilities in good faith and in accordance with this policy.</p>
+      <p>We ask that you:</p>
+      <ul>
+        <li>Do not perform denial-of-service (DoS) testing</li>
+        <li>Do not access, modify, or delete user data beyond the minimum necessary to demonstrate the vulnerability</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="/">← Back to Home</a></p>
+    <p style="margin-top: 0.5rem;">&copy; Dr. Shawn A. Hearn. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

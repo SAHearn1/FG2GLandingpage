@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Root Work Framework</title>
+  <meta name="description" content="Privacy Policy for the Root Work Framework website. Learn how Dr. Shawn A. Hearn collects, uses, and protects your personal information." />
+  <meta name="robots" content="noindex, follow" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://fg2g-rwfw.com/privacy" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/icons/tree-simple.svg" />
+  <link rel="icon" type="image/png" href="/icons/root.png" />
+  <link rel="apple-touch-icon" href="/icons/root.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Root Work Framework" />
+  <meta property="og:title" content="Privacy Policy — Root Work Framework" />
+  <meta property="og:description" content="Privacy Policy for the Root Work Framework website. Learn how Dr. Shawn A. Hearn collects, uses, and protects your personal information." />
+  <meta property="og:image" content="https://fg2g-rwfw.com/icons/root.png" />
+  <meta property="og:url" content="https://fg2g-rwfw.com/privacy" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --evergreen:    #082A19;
+      --deep-canopy:  #0A3622;
+      --leaf:         #3B523A;
+      --gold:         #C9A84C;
+      --cream:        #F2F4CA;
+      --white:        #ffffff;
+      --text-dark:    #1a1a1a;
+      --text-mid:     #3d3d3d;
+      --text-muted:   #666666;
+      --border:       #d4d6b0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background-color: var(--cream);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Navigation ── */
+    nav {
+      background-color: var(--evergreen);
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .nav-logo:hover {
+      color: var(--cream);
+    }
+
+    .nav-back {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--cream);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+
+    .nav-back:hover {
+      opacity: 1;
+    }
+
+    .nav-back-arrow {
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    /* ── Main content ── */
+    main {
+      flex: 1;
+      padding: 48px 24px 64px;
+    }
+
+    .page-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ── Page header card ── */
+    .page-header {
+      background: var(--evergreen);
+      border-radius: 16px 16px 0 0;
+      padding: 40px 48px 36px;
+      text-align: center;
+      color: var(--cream);
+    }
+
+    .page-header-eyebrow {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .page-header h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .page-header-meta {
+      font-size: 0.875rem;
+      color: rgba(242, 244, 202, 0.7);
+      font-weight: 300;
+    }
+
+    /* ── Content card ── */
+    .content-card {
+      background: var(--white);
+      border-radius: 0 0 16px 16px;
+      padding: 48px;
+      box-shadow: 0 6px 32px rgba(8, 42, 25, 0.10);
+    }
+
+    /* ── Sections ── */
+    .policy-section {
+      margin-bottom: 40px;
+    }
+
+    .policy-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-section h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--evergreen);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--cream);
+    }
+
+    .policy-section h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--leaf);
+      margin: 20px 0 8px;
+    }
+
+    .policy-section p {
+      font-size: 0.9375rem;
+      color: var(--text-mid);
+      margin-bottom: 12px;
+    }
+
+    .policy-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-section ul,
+    .policy-section ol {
+      padding-left: 24px;
+      margin-bottom: 12px;
+    }
+
+    .policy-section li {
+      font-size: 0.9375rem;
+      color: var(--text-mid);
+      margin-bottom: 6px;
+    }
+
+    .policy-section li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Highlight box ── */
+    .highlight-box {
+      background: var(--cream);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+
+    /* ── Processor table ── */
+    .processor-grid {
+      display: grid;
+      gap: 14px;
+      margin: 16px 0;
+    }
+
+    .processor-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+
+    .processor-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--evergreen);
+      margin-bottom: 4px;
+    }
+
+    .processor-role {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .processor-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* ── Divider ── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 36px 0;
+    }
+
+    /* ── Contact link ── */
+    a {
+      color: var(--leaf);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    a:hover {
+      color: var(--evergreen);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background-color: var(--evergreen);
+      color: rgba(242, 244, 202, 0.65);
+      text-align: center;
+      padding: 24px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 300;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+      color: var(--cream);
+    }
+
+    footer .footer-links {
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      nav {
+        padding: 0 16px;
+      }
+
+      .nav-logo {
+        font-size: 1.1rem;
+      }
+
+      main {
+        padding: 24px 12px 48px;
+      }
+
+      .page-header {
+        padding: 28px 24px 24px;
+        border-radius: 12px 12px 0 0;
+      }
+
+      .page-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .content-card {
+        padding: 28px 24px;
+        border-radius: 0 0 12px 12px;
+      }
+
+      .policy-section h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav aria-label="Site navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Root Work Framework — Home">Root Work Framework</a>
+      <a href="/" class="nav-back" aria-label="Back to home page">
+        <span class="nav-back-arrow" aria-hidden="true">&#8592;</span>
+        Back to Home
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <div class="page-container">
+
+      <!-- Page Header -->
+      <header class="page-header" role="banner">
+        <p class="page-header-eyebrow">Legal &amp; Transparency</p>
+        <h1>Privacy Policy</h1>
+        <p class="page-header-meta">Effective Date: February 24, 2026 &nbsp;|&nbsp; fg2g-rwfw.com</p>
+      </header>
+
+      <!-- Content Card -->
+      <article class="content-card">
+
+        <div class="highlight-box">
+          <p>This Privacy Policy explains how Dr. Shawn A. Hearn, Ed.D., J.D. ("we," "us," or "our") collects, uses, and protects personal information you provide when using the Root Work Framework website at <strong>fg2g-rwfw.com</strong>. We are committed to transparency and will never sell your personal data.</p>
+        </div>
+
+        <!-- 1. Information We Collect -->
+        <section class="policy-section" aria-labelledby="section-collect">
+          <h2 id="section-collect">1. Information We Collect</h2>
+          <p>We collect personal information only when you voluntarily provide it through our website forms. The specific information we may collect includes:</p>
+          <ul>
+            <li><strong>Name</strong> — your first and/or last name</li>
+            <li><strong>Email address</strong> — to send newsletters and follow up on consultation requests</li>
+            <li><strong>Phone number</strong> — optionally provided on consultation request forms</li>
+            <li><strong>Organization</strong> — the school, institution, or organization you represent</li>
+            <li><strong>Role</strong> — your professional role (e.g., educator, administrator, parent)</li>
+          </ul>
+          <p>We also collect limited technical data automatically through our hosting and analytics providers (described in Section 4 below), such as page views, browser type, and general geographic region. This data does not identify you personally.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 2. How We Use Your Information -->
+        <section class="policy-section" aria-labelledby="section-use">
+          <h2 id="section-use">2. How We Use Your Information</h2>
+          <p>Information you provide is used solely for the following purposes:</p>
+
+          <h3>Newsletter Delivery</h3>
+          <p>If you subscribe to our newsletter, we use your name and email address to send you updates about the Root Work Framework, educational resources, and announcements. Every newsletter includes an unsubscribe link. You may opt out at any time.</p>
+
+          <h3>Consultation Follow-Up</h3>
+          <p>If you submit a consultation request, we use your contact information (name, email, phone, organization, role) to respond to your inquiry and coordinate scheduling. This information is not used for marketing without your consent.</p>
+
+          <h3>AI Chatbot Interactions (Rooty)</h3>
+          <p>Our website features an AI chatbot named Rooty, powered by Anthropic's Claude. Conversations with Rooty are processed in real time to generate responses. Per Anthropic's API usage policy, Anthropic does not retain or train on API conversation data. Messages are not stored by us beyond the active browser session unless you separately submit a form.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 3. Legal Basis for Processing -->
+        <section class="policy-section" aria-labelledby="section-legal-basis">
+          <h2 id="section-legal-basis">3. Legal Basis for Processing</h2>
+          <p>We process your personal information on the following lawful bases:</p>
+          <ul>
+            <li><strong>Consent</strong> — when you voluntarily submit a form or subscribe to our newsletter</li>
+            <li><strong>Legitimate interests</strong> — to operate and improve the website, respond to inquiries, and prevent abuse</li>
+            <li><strong>Contractual necessity</strong> — to fulfill consultation requests you initiate</li>
+          </ul>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 4. Third-Party Data Processors -->
+        <section class="policy-section" aria-labelledby="section-third-party">
+          <h2 id="section-third-party">4. Third-Party Data Processors</h2>
+          <p>We use the following trusted third-party services to operate this website. Each is contractually bound to process your data only as directed and in accordance with applicable privacy law.</p>
+
+          <div class="processor-grid">
+            <div class="processor-card">
+              <p class="processor-name">Vercel</p>
+              <p class="processor-role">Hosting &amp; Analytics</p>
+              <p class="processor-desc">Our website is hosted on Vercel's infrastructure. Vercel Analytics collects aggregated, anonymized usage data (page views, referrers, device type, general location) using cookies and pixels. This data helps us understand how visitors use the site. Vercel does not share this data with advertising networks. See <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel's Privacy Policy</a>.</p>
+            </div>
+            <div class="processor-card">
+              <p class="processor-name">n8n</p>
+              <p class="processor-role">Form Data Routing &amp; Automation</p>
+              <p class="processor-desc">Form submissions (newsletter sign-ups, consultation requests, and unsubscribe actions) are routed through n8n webhooks to process and deliver data to our internal tools. n8n acts as a data processor on our behalf. Form data is not used for purposes beyond those described in this policy. See <a href="https://n8n.io/legal/privacy" target="_blank" rel="noopener noreferrer">n8n's Privacy Policy</a>.</p>
+            </div>
+            <div class="processor-card">
+              <p class="processor-name">Anthropic / Claude</p>
+              <p class="processor-role">AI Chatbot Processing</p>
+              <p class="processor-desc">Rooty, our AI chatbot, is powered by Anthropic's Claude API. Messages you send to Rooty are transmitted to Anthropic for real-time response generation. Per Anthropic's API data usage policy, Anthropic does not use API inputs or outputs to train its models, and does not retain this data beyond processing the request. No personally identifying information is intentionally transmitted to the chatbot. See <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">Anthropic's Privacy Policy</a>.</p>
+            </div>
+          </div>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 5. Cookies and Tracking -->
+        <section class="policy-section" aria-labelledby="section-cookies">
+          <h2 id="section-cookies">5. Cookies and Tracking Technologies</h2>
+          <p>We use cookies and similar tracking technologies solely through Vercel Analytics. These tools may place small data files on your device to help us understand aggregate site usage patterns. No third-party advertising cookies are used on this site.</p>
+          <p>Most browsers allow you to control cookie behavior through your settings. Disabling cookies may affect site functionality but will not prevent you from accessing content.</p>
+          <p>We do not use cookies for behavioral advertising, remarketing, or cross-site tracking.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 6. Data Retention -->
+        <section class="policy-section" aria-labelledby="section-retention">
+          <h2 id="section-retention">6. Data Retention</h2>
+          <p>We retain personal information only as long as necessary for the purposes described in this policy:</p>
+          <ul>
+            <li><strong>Newsletter subscriber data</strong> — retained until you unsubscribe. Upon unsubscribing, your data is removed from our active mailing list. Anonymized records may be retained for up to 30 days for operational continuity.</li>
+            <li><strong>Consultation request data</strong> — retained for up to <strong>2 years</strong> from the date of submission to support follow-up and business record-keeping.</li>
+            <li><strong>Analytics data</strong> — aggregated and anonymized by Vercel; subject to Vercel's retention schedule.</li>
+          </ul>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 7. Your Rights -->
+        <section class="policy-section" aria-labelledby="section-rights">
+          <h2 id="section-rights">7. Your Privacy Rights</h2>
+
+          <h3>GDPR Rights (EU/UK Residents)</h3>
+          <p>If you are located in the European Union or United Kingdom, you have the following rights under the General Data Protection Regulation (GDPR):</p>
+          <ul>
+            <li><strong>Right of Access</strong> — request a copy of the personal data we hold about you</li>
+            <li><strong>Right to Rectification</strong> — request correction of inaccurate or incomplete data</li>
+            <li><strong>Right to Erasure</strong> — request deletion of your personal data ("right to be forgotten")</li>
+            <li><strong>Right to Restrict Processing</strong> — request that we limit how we use your data</li>
+            <li><strong>Right to Data Portability</strong> — request your data in a machine-readable format</li>
+            <li><strong>Right to Object</strong> — object to processing based on legitimate interests</li>
+          </ul>
+          <p>To exercise these rights, contact us at <a href="mailto:hearn.sa@gmail.com">hearn.sa@gmail.com</a>. We will respond within 30 days.</p>
+
+          <h3>CCPA Rights (California Residents)</h3>
+          <p>If you are a California resident, you have the right to:</p>
+          <ul>
+            <li>Know what personal information is collected about you and how it is used</li>
+            <li>Request deletion of your personal information</li>
+            <li><strong>Opt out of the sale of your personal information</strong> — we do not sell personal information, so this right is already honored by default</li>
+            <li>Non-discrimination for exercising your privacy rights</li>
+          </ul>
+          <p>To submit a CCPA request, email <a href="mailto:hearn.sa@gmail.com">hearn.sa@gmail.com</a> with "CCPA Request" in the subject line.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 8. Data Security -->
+        <section class="policy-section" aria-labelledby="section-security">
+          <h2 id="section-security">8. Data Security</h2>
+          <p>We take reasonable technical and organizational measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction. These measures include encrypted HTTPS connections, access controls, and use of reputable cloud infrastructure (Vercel).</p>
+          <p>No method of internet transmission or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your data, we cannot guarantee absolute security.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 9. Children's Privacy -->
+        <section class="policy-section" aria-labelledby="section-children">
+          <h2 id="section-children">9. Children's Privacy</h2>
+          <p>This website is not directed to children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information through our website, please contact us at <a href="mailto:hearn.sa@gmail.com">hearn.sa@gmail.com</a> and we will delete it promptly.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 10. Changes to This Policy -->
+        <section class="policy-section" aria-labelledby="section-changes">
+          <h2 id="section-changes">10. Changes to This Policy</h2>
+          <p>We may update this Privacy Policy from time to time to reflect changes in our practices or applicable law. When we do, we will update the effective date at the top of this page. We encourage you to review this policy periodically. Continued use of the website after a policy update constitutes acceptance of the revised policy.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 11. Contact -->
+        <section class="policy-section" aria-labelledby="section-contact">
+          <h2 id="section-contact">11. Contact Us</h2>
+          <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact:</p>
+          <div class="highlight-box">
+            <p>
+              <strong>Dr. Shawn A. Hearn, Ed.D., J.D.</strong><br />
+              Root Work Framework<br />
+              Email: <a href="mailto:hearn.sa@gmail.com">hearn.sa@gmail.com</a><br />
+              Website: <a href="https://fg2g-rwfw.com">fg2g-rwfw.com</a>
+            </p>
+          </div>
+          <p>Also see our <a href="/terms">Terms of Service</a>.</p>
+        </section>
+
+      </article>
+      <!-- end content-card -->
+
+    </div>
+    <!-- end page-container -->
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>&copy; 2026 Dr. Shawn A. Hearn, Ed.D., J.D. All rights reserved.</p>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="mailto:hearn.sa@gmail.com">Contact</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
