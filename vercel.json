@@ -21,7 +21,11 @@
       "destination": "/security-policy.html"
     },
     {
-      "source": "/(.*)",
+      "source": "/404",
+      "destination": "/404.html"
+    },
+    {
+      "source": "/",
       "destination": "/index.html"
     }
   ],
@@ -34,7 +38,7 @@
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(self), camera=()" },
         { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://api.anthropic.com; media-src 'self'" }
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self'; style-src 'self' fonts.googleapis.com; font-src fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://api.anthropic.com; media-src 'self'; style-src-attr 'none'" }
       ]
     },
     {

@@ -41,3 +41,6 @@ Desktop.ini
 # Temporary files
 *.tmp
 *.temp
+
+# Build output (local review only — Vercel serves unminified source)
+dist/
