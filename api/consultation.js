@@ -1,6 +1,32 @@
+// In-memory rate limiter: 5 requests per hour per IP
+const rateLimit = new Map();
+const RATE_LIMIT_WINDOW = 3600 * 1000;
+const RATE_LIMIT_MAX = 5;
+
+function isRateLimited(ip, windowMs, maxRequests) {
+  const now = Date.now();
+  const entry = rateLimit.get(ip) || { count: 0, windowStart: now };
+  if (now - entry.windowStart > windowMs) {
+    entry.count = 1;
+    entry.windowStart = now;
+  } else {
+    entry.count++;
+  }
+  rateLimit.set(ip, entry);
+  return entry.count > maxRequests;
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  const ip =
+    req.headers['x-forwarded-for']?.split(',')[0]?.trim() ||
+    req.socket?.remoteAddress ||
+    'unknown';
+  if (isRateLimited(ip, RATE_LIMIT_WINDOW, RATE_LIMIT_MAX)) {
+    return res.status(429).json({ error: 'Too many requests. Please wait before trying again.' });
   }
 
   const { name, email, phone, organization, interest, message } = req.body || {};

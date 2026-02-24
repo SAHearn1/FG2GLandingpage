@@ -457,7 +457,50 @@
 
 </div>
 
-<!-- Vercel Analytics -->
-<script defer src="/_vercel/insights/script.js"></script>
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" role="dialog" aria-modal="false" aria-labelledby="cookie-banner-title" aria-describedby="cookie-banner-desc" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#082A19;color:#F2F4CA;padding:1rem 1.5rem;box-shadow:0 -4px 24px rgba(0,0,0,0.3);font-family:'Nunito',sans-serif;">
+  <div style="max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:1rem;">
+    <div style="flex:1;min-width:250px;">
+      <p id="cookie-banner-title" style="margin:0 0 0.25rem;font-weight:700;font-size:0.95rem;">This site uses analytics cookies</p>
+      <p id="cookie-banner-desc" style="margin:0;font-size:0.85rem;opacity:0.85;">We use Vercel Analytics to understand how visitors use this site. No personal data is sold. <a href="/privacy" style="color:#C9A84C;text-decoration:underline;">Privacy Policy</a></p>
+    </div>
+    <div style="display:flex;gap:0.75rem;flex-shrink:0;">
+      <button id="cookie-decline" style="background:transparent;border:1px solid rgba(242,244,202,0.4);color:#F2F4CA;padding:0.5rem 1.25rem;border-radius:999px;cursor:pointer;font-family:'Nunito',sans-serif;font-size:0.875rem;font-weight:600;">Decline</button>
+      <button id="cookie-accept" style="background:#C9A84C;border:none;color:#082A19;padding:0.5rem 1.25rem;border-radius:999px;cursor:pointer;font-family:'Nunito',sans-serif;font-size:0.875rem;font-weight:700;">Accept</button>
+    </div>
+  </div>
+</div>
+
+<!-- Vercel Analytics (consent-gated) -->
+<script>
+  (function() {
+    var consent = localStorage.getItem('rwfw_cookie_consent');
+    var banner = document.getElementById('cookie-banner');
+    var acceptBtn = document.getElementById('cookie-accept');
+    var declineBtn = document.getElementById('cookie-decline');
+
+    function loadAnalytics() {
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = '/_vercel/insights/script.js';
+      document.head.appendChild(s);
+    }
+
+    function setConsent(value) {
+      localStorage.setItem('rwfw_cookie_consent', value);
+      if (banner) banner.style.display = 'none';
+      if (value === 'accepted') loadAnalytics();
+    }
+
+    if (acceptBtn) acceptBtn.addEventListener('click', function() { setConsent('accepted'); });
+    if (declineBtn) declineBtn.addEventListener('click', function() { setConsent('declined'); });
+
+    if (consent === 'accepted') {
+      loadAnalytics();
+    } else if (!consent) {
+      if (banner) banner.style.display = 'block';
+    }
+  })();
+</script>
 </body>
 </html>
