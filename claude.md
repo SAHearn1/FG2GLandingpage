@@ -55,7 +55,7 @@ This document tracks the comprehensive gap analysis performed on 2026-02-24 and 
 
 | # | Issue | Severity | Status |
 |---|-------|----------|--------|
-| 1.1 | CSP uses `unsafe-inline` in script-src and style-src | High | **In Progress** |
+| 1.1 | CSP uses `unsafe-inline` in script-src and style-src | High | ✅ Done |
 | 1.2 | Add Privacy Policy page (/privacy) | High (Legal) | ✅ Done |
 | 1.3 | Add Terms of Service page (/terms) | High (Legal) | ✅ Done |
 | 1.4 | Add cookie consent banner | High (Legal) | ✅ Done |
@@ -83,8 +83,8 @@ This document tracks the comprehensive gap analysis performed on 2026-02-24 and 
 | 3.1 | Add loading="lazy" to all images | High | ✅ Done |
 | 3.2 | Add srcset and <picture> for responsive images | High | Planned |
 | 3.3 | Convert PNGs to WebP format | High | Planned |
-| 3.4 | Extract and minify CSS to external stylesheet | High | Planned (linked to 1.1) |
-| 3.5 | Extract JS to external files with defer | High | Planned (linked to 1.1) |
+| 3.4 | Extract and minify CSS to external stylesheet | High | ✅ Done — styles.css (1,435 lines) |
+| 3.5 | Extract JS to external files with defer | High | ✅ Done — scripts.js (453 lines) |
 | 3.6 | Extract base64 images from savannah-initiative.html (1.04 MB → ~22 KB) | High | ✅ Done |
 | 3.7 | Add custom 404 page | Medium | ✅ Done |
 | 3.8 | Add PWA service worker | Low | Planned |
