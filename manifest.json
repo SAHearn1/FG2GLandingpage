@@ -1,0 +1,41 @@
+{
+  "name": "Root Work Framework",
+  "short_name": "RootWork",
+  "description": "Healing-centered, trauma-informed pedagogy built on the 5Rs Framework. For K-12 educators, homeschool families, charter schools, and alternative education programs.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#082A19",
+  "theme_color": "#C9A84C",
+  "lang": "en",
+  "categories": ["education"],
+  "icons": [
+    {
+      "src": "/icons/root.webp",
+      "sizes": "1024x1024",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/root.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "The 5Rs Framework",
+      "url": "/#framework",
+      "description": "Explore Root, Regulate, Reflect, Restore, Reconnect"
+    },
+    {
+      "name": "Savannah Initiative",
+      "url": "/savannah-initiative",
+      "description": "Partner with Root Work Framework"
+    }
+  ],
+  "screenshots": [],
+  "related_applications": []
+}

@@ -140,9 +140,9 @@ approved by the project owner.
 | ~~P4-4~~ | ~~Add Husky + lint-staged pre-commit hooks~~ | Medium | AGENT-DEVEX | ✅ Done — commit `9346f1f` |
 | ~~P4-5~~ | ~~Add build/minification pipeline~~ | Medium | AGENT-DEVEX | ✅ Done — commit `7212ea1` |
 | ~~S.1~~ | ~~FAQ schema (FAQPage JSON-LD)~~ | Medium | AGENT-SEO | ✅ Done — 10-question FAQPage JSON-LD, index.html |
-| P3-8 | PWA service worker + manifest | Low | DEFERRED | Wave 3 — planning session scheduled |
+| ~~P3-8~~ | ~~PWA service worker + manifest~~ | Low | AGENT-PERF | ✅ Done — manifest.json, sw.js, offline.html; all 6 pages wired |
 
-**Remaining open item:** P3-8 PWA requires a dedicated planning session (see PWA Planning section below).
+**All tracked items complete.** See PWA Planning section below for cache versioning and future icon upgrade notes.
 
 ---
 
@@ -359,11 +359,11 @@ All Wave 2 items resolved:
 
 ---
 
-### Wave 3 — PWA Planning Session
+### Wave 3 — PWA (Complete)
 
 **Scope:** P3-8 — Progressive Web App (service worker + web app manifest)
-**Status:** Requires dedicated planning session before execution
-**See:** PWA Planning section below for full spec
+**Status:** ✅ Done — manifest.json, sw.js, offline.html delivered; CSP updated; all 6 pages wired
+**See:** PWA Planning section below for cache versioning procedure and future icon upgrade notes
 
 ---
 
@@ -425,15 +425,15 @@ All Wave 2 items resolved:
 - [x] Wave 2: S.1 FAQ schema complete (10-question FAQPage JSON-LD, no FAQ section required — built from site content)
   - [x] S.1 FAQ schema — implemented directly from existing framework content
   - [x] UX-1 Testimonials — removed from scope; deferred until client content is available
-- [ ] Wave 3: PWA planning session — see PWA Planning section
+- [x] Wave 3: PWA complete — manifest.json, sw.js, offline.html, all 6 pages wired, vercel.json CSP updated
 
 ---
 
 ## PWA Planning Session — P3-8
 
-> **Status:** Planned — not yet executed
+> **Status:** ✅ Complete — delivered on branch `claude/github-issues-gap-analysis-wHR7K`
 > **Issue:** P3-8 | Priority: Low
-> **Branch:** `claude/github-issues-gap-analysis-wHR7K` (or new branch for Wave 3)
+> **Files:** `manifest.json`, `sw.js`, `offline.html`; manifest linked in all 6 HTML pages; SW registered in `scripts.js`; `vercel.json` updated (CSP + SW headers)
 
 ### Goal
 

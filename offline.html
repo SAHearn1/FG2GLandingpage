@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're Offline — Root Work Framework</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#C9A84C">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/icons/tree-simple.svg">
+  <link rel="apple-touch-icon" href="/icons/root.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #082A19;
+      color: #e8e0cc;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      text-align: center;
+      max-width: 480px;
+      width: 100%;
+    }
+    .icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 28px;
+      opacity: 0.9;
+    }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #C9A84C;
+      margin-bottom: 12px;
+      letter-spacing: 0.01em;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(232, 224, 204, 0.78);
+      margin-bottom: 16px;
+    }
+    p:last-of-type { margin-bottom: 32px; }
+    .btn {
+      display: inline-block;
+      background: #C9A84C;
+      color: #082A19;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover { background: #d9b85c; }
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: rgba(201, 168, 76, 0.4);
+      margin: 28px auto;
+    }
+    .note {
+      font-size: 0.82rem;
+      color: rgba(232, 224, 204, 0.45);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="icon" src="/icons/tree-simple.svg" alt="Root Work Framework tree icon">
+    <h1>You're Offline</h1>
+    <p>It looks like you've lost your internet connection. The Root Work Framework requires a network connection to load new content.</p>
+    <p>Previously visited pages may still be available from your device's cache.</p>
+    <button class="btn" onclick="window.location.reload()">Try Again</button>
+    <div class="divider"></div>
+    <p class="note">Root Work Framework &mdash; Rerooted Learning: Where Academics and Healing Grow Together</p>
+  </div>
+</body>
+</html>

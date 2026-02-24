@@ -451,3 +451,14 @@
           if (banner) banner.style.display = 'block';
         }
       })();
+
+// PWA: Service Worker Registration
+// Progressive enhancement — site works without SW support.
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js', { scope: '/' })
+      .catch(function (err) {
+        console.warn('[RWF] Service worker registration failed:', err);
+      });
+  });
+}
