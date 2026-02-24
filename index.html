@@ -1343,7 +1343,23 @@
                 bottom: 90px;
             }
         }
-    </style>
+    .skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #C9A84C;
+  color: #082A19;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  z-index: 100000;
+  border-radius: 0 0 4px 0;
+}
+.skip-link:focus {
+  top: 0;
+}
+</style>
 
     <style>
   :root{
@@ -1388,6 +1404,7 @@
 </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Header -->
     <header>
         <div class="container">
@@ -1410,7 +1427,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="main-content">
         <div class="container">
             <h1>Root Work Framework</h1>
             <p class="tagline">Rerooted Learning: Where Academics and Healing Grow Together</p>
@@ -1683,13 +1700,13 @@
     </footer>
 
     <!-- Rooty Chatbot Widget -->
-    <button id="rooty-toggle" aria-label="Chat with Rooty">
+    <button id="rooty-toggle" aria-label="Chat with Rooty" aria-expanded="false">
         <span class="rooty-icon-open"><img src="icons/tree-simple.svg" alt=""></span>
         <span class="rooty-icon-close">✕</span>
     </button>
     <div id="rooty-label">Chat with Rooty</div>
 
-    <div id="rooty-window" role="dialog" aria-label="Rooty chat assistant">
+    <div id="rooty-window" role="dialog" aria-modal="true" aria-label="Rooty chat assistant">
         <div class="rooty-header">
             <div class="rooty-header-avatar"><img src="icons/tree-simple.svg" alt="Rooty"></div>
             <div class="rooty-header-info">
@@ -1698,14 +1715,14 @@
             </div>
             <button id="rooty-mute" title="Mute / unmute voice" aria-label="Toggle voice">🔊</button>
         </div>
-        <div class="rooty-messages" id="rooty-messages">
+        <div class="rooty-messages" id="rooty-messages" aria-live="polite" aria-label="Chat messages">
             <div class="rooty-bubble bot">Hi! I'm Rooty 🌱 — your Root Work Framework guide. Ask me anything about the 5Rs, who we serve, or how to get started!</div>
         </div>
-        <div class="rooty-typing" id="rooty-typing">
+        <div class="rooty-typing" id="rooty-typing" role="status" aria-label="Rooty is typing">
             <span></span><span></span><span></span>
         </div>
         <div class="rooty-input-row">
-            <input type="text" id="rooty-input" placeholder="Ask me anything…" autocomplete="off" maxlength="500" />
+            <input type="text" id="rooty-input" placeholder="Ask me anything…" autocomplete="off" maxlength="500" aria-label="Type your message" />
             <button id="rooty-mic" aria-label="Voice input" title="Speak your message">🎤</button>
             <button id="rooty-send" aria-label="Send message">➤</button>
         </div>
@@ -1717,13 +1734,13 @@
     </button>
 
     <!-- Newsletter Modal -->
-    <div class="newsletter-modal" id="newsletterModal">
+    <div class="newsletter-modal" id="newsletterModal" role="dialog" aria-modal="true" aria-labelledby="newsletter-modal-title">
         <div class="newsletter-modal-content">
             <button class="newsletter-close" id="newsletterClose" aria-label="Close modal">&times;</button>
             
             <div class="newsletter-header">
                 <div class="newsletter-icon"><img src="icons/tree-roots.svg" alt="RootWork Network icon"></div>
-                <h3>Join the RootWork Network</h3>
+                <h3 id="newsletter-modal-title">Join the RootWork Network</h3>
                 <p>Get free monthly teacher tools & updates delivered to your inbox</p>
             </div>
             
@@ -1884,13 +1901,13 @@
     </script>
 
     <!-- Consultation Modal -->
-    <div class="consultation-modal" id="consultationModal">
+    <div class="consultation-modal" id="consultationModal" role="dialog" aria-modal="true" aria-labelledby="consultation-modal-title">
         <div class="consultation-modal-content">
             <button class="consultation-close" id="consultationClose" aria-label="Close modal">&times;</button>
             
             <div class="consultation-header">
                 <div class="consultation-icon">📅</div>
-                <h3>Schedule a Consultation</h3>
+                <h3 id="consultation-modal-title">Schedule a Consultation</h3>
                 <p>Connect with us to discuss professional development, curriculum implementation, or partnership opportunities</p>
             </div>
             
