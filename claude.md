@@ -115,7 +115,7 @@ This document tracks the comprehensive gap analysis performed on 2026-02-24 and 
 
 ## Swarm Orchestration Plan — Parallel Execution
 
-> **STATUS: PLANNING COMPLETE — AWAITING APPROVAL BEFORE EXECUTION**
+> **STATUS: WAVE 1 COMPLETE — ALL AGENTS LANDED SUCCESSFULLY**
 > Last updated: 2026-02-24
 > Branch: `claude/github-issues-gap-analysis-wHR7K`
 
@@ -130,21 +130,20 @@ approved by the project owner.
 
 ### Open Items (Remaining Work)
 
-| ID | Task | Priority | Agent | Blocked? |
-|----|------|----------|-------|----------|
-| P3-2 | Add srcset + `<picture>` for responsive images | High | AGENT-IMAGES | No |
-| P3-3 | Convert PNGs in icons/ to WebP | High | AGENT-IMAGES | No |
-| P3-8 | PWA service worker + manifest | Low | DEFERRED | No |
-| P3-9 | Extract logo base64 from index.html → icons/ | High | AGENT-IMAGES | No |
-| P4-4 | Add Husky + lint-staged pre-commit hooks | Medium | AGENT-DEVEX | No |
-| P4-5 | Add build/minification pipeline | Medium | AGENT-DEVEX | No |
-| S.1 | FAQ schema (FAQPage JSON-LD) | Medium | BLOCKED | Needs FAQ content |
-| S.3 | Fix og:image to 1200×630 | Medium | AGENT-SEO | No |
-| FAV | Add favicon.ico fallback for legacy browsers | Low | AGENT-IMAGES | No |
+| ID | Task | Priority | Agent | Status |
+|----|------|----------|-------|--------|
+| ~~P3-2~~ | ~~Add srcset + `<picture>` for responsive images~~ | High | AGENT-IMAGES | ✅ Done — commit `74dfecc` |
+| ~~P3-3~~ | ~~Convert PNGs in icons/ to WebP~~ | High | AGENT-IMAGES | ✅ Done — commit `ac46ff5` |
+| ~~P3-9~~ | ~~Extract logo base64 from index.html → icons/~~ | High | AGENT-IMAGES | ✅ Done — commit `37a5503` |
+| ~~FAV~~ | ~~Add favicon.ico fallback for legacy browsers~~ | Low | AGENT-IMAGES | ✅ Done — commit `aaf55c2` |
+| ~~S.3~~ | ~~Fix og:image to 1200×630~~ | Medium | AGENT-SEO | ✅ Done — commit `2dc2e3b` |
+| ~~P4-4~~ | ~~Add Husky + lint-staged pre-commit hooks~~ | Medium | AGENT-DEVEX | ✅ Done — commit `9346f1f` |
+| ~~P4-5~~ | ~~Add build/minification pipeline~~ | Medium | AGENT-DEVEX | ✅ Done — commit `7212ea1` |
+| P3-8 | PWA service worker + manifest | Low | DEFERRED | Wave 2 — separate session |
+| S.1 | FAQ schema (FAQPage JSON-LD) | Medium | BLOCKED | Needs FAQ content from Dr. Hearn |
 | UX-1 | Testimonials / case studies section | Medium | BLOCKED | Needs client content |
 
-**Blocked items** (S.1, UX-1) have GitHub issues filed but are NOT assigned to any Wave.
-They require human content input from Dr. Hearn before implementation can begin.
+**Wave 2 blocked items** (S.1, UX-1, P3-8) require human input before any agent is assigned.
 
 ---
 
