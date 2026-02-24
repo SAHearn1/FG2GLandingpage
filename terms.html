@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Terms of Service for Root Work Framework — acceptable use, intellectual property, and governing terms for fg2g-rwfw.com.">
-  <meta property="og:title" content="Terms of Service — Root Work Framework">
-  <meta property="og:description" content="Terms of Service for the Root Work Framework, a healing-centered, trauma-informed pedagogy platform.">
-  <meta property="og:url" content="https://fg2g-rwfw.com/terms">
-  <meta property="og:type" content="website">
-  <link rel="canonical" href="https://fg2g-rwfw.com/terms">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms of Service — Root Work Framework</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Terms of Service for the Root Work Framework website. Read the conditions governing your use of fg2g-rwfw.com and its educational resources." />
+  <meta name="robots" content="noindex, follow" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://fg2g-rwfw.com/terms" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/icons/tree-simple.svg" />
+  <link rel="icon" type="image/png" href="/icons/root.png" />
+  <link rel="apple-touch-icon" href="/icons/root.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Root Work Framework" />
+  <meta property="og:title" content="Terms of Service — Root Work Framework" />
+  <meta property="og:description" content="Terms of Service for the Root Work Framework website. Read the conditions governing your use of fg2g-rwfw.com and its educational resources." />
+  <meta property="og:image" content="https://fg2g-rwfw.com/icons/root.png" />
+  <meta property="og:url" content="https://fg2g-rwfw.com/terms" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -20,297 +33,545 @@
       padding: 0;
     }
 
+    :root {
+      --evergreen:    #082A19;
+      --deep-canopy:  #0A3622;
+      --leaf:         #3B523A;
+      --gold:         #C9A84C;
+      --cream:        #F2F4CA;
+      --white:        #ffffff;
+      --text-dark:    #1a1a1a;
+      --text-mid:     #3d3d3d;
+      --text-muted:   #666666;
+      --border:       #d4d6b0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Nunito', sans-serif;
-      background-color: #F2F4CA;
-      color: #082A19;
-      line-height: 1.75;
-      font-size: 1rem;
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background-color: var(--cream);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    header {
-      background-color: #082A19;
-      color: #F2F4CA;
-      padding: 1.25rem 2rem;
+    /* ── Navigation ── */
+    nav {
+      background-color: var(--evergreen);
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     }
 
-    .header-inner {
-      max-width: 860px;
+    .nav-inner {
+      max-width: 900px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.75rem;
+      height: 64px;
     }
 
-    .site-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
+    .nav-logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.35rem;
       font-weight: 700;
-      color: #F2F4CA;
+      color: var(--gold);
       text-decoration: none;
       letter-spacing: 0.02em;
+      white-space: nowrap;
     }
 
-    .site-name:hover {
-      text-decoration: underline;
+    .nav-logo:hover {
+      color: var(--cream);
     }
 
-    .header-links {
-      display: flex;
-      gap: 1.5rem;
+    .nav-back {
+      font-family: 'Nunito', sans-serif;
       font-size: 0.875rem;
-    }
-
-    .header-links a {
-      color: rgba(242, 244, 202, 0.8);
-      text-decoration: none;
-    }
-
-    .header-links a:hover {
-      color: #F2F4CA;
-      text-decoration: underline;
-    }
-
-    main {
-      max-width: 760px;
-      margin: 3rem auto;
-      padding: 0 1.5rem 5rem;
-    }
-
-    .page-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.6rem;
-      font-weight: 700;
-      color: #082A19;
-      margin-bottom: 0.5rem;
-    }
-
-    .effective-date {
-      font-size: 0.9rem;
-      color: #3B523A;
-      margin-bottom: 2rem;
       font-weight: 600;
+      color: var(--cream);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.85;
+      transition: opacity 0.2s;
     }
 
-    .intro {
-      background: #fff;
-      border-left: 4px solid #082A19;
-      padding: 1.25rem 1.5rem;
-      border-radius: 0 8px 8px 0;
-      margin-bottom: 2.5rem;
-      font-size: 1.02rem;
+    .nav-back:hover {
+      opacity: 1;
     }
 
-    section {
-      margin-bottom: 2.5rem;
+    .nav-back-arrow {
+      font-size: 1rem;
+      line-height: 1;
     }
 
-    h2 {
-      font-family: 'Cormorant Garamond', serif;
+    /* ── Main content ── */
+    main {
+      flex: 1;
+      padding: 48px 24px 64px;
+    }
+
+    .page-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ── Page header card ── */
+    .page-header {
+      background: var(--evergreen);
+      border-radius: 16px 16px 0 0;
+      padding: 40px 48px 36px;
+      text-align: center;
+      color: var(--cream);
+    }
+
+    .page-header-eyebrow {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .page-header h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .page-header-meta {
+      font-size: 0.875rem;
+      color: rgba(242, 244, 202, 0.7);
+      font-weight: 300;
+    }
+
+    /* ── Content card ── */
+    .content-card {
+      background: var(--white);
+      border-radius: 0 0 16px 16px;
+      padding: 48px;
+      box-shadow: 0 6px 32px rgba(8, 42, 25, 0.10);
+    }
+
+    /* ── Sections ── */
+    .policy-section {
+      margin-bottom: 40px;
+    }
+
+    .policy-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-section h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 1.5rem;
       font-weight: 700;
-      color: #082A19;
-      margin-bottom: 0.85rem;
-      border-bottom: 1px solid rgba(8, 42, 25, 0.2);
-      padding-bottom: 0.4rem;
+      color: var(--evergreen);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--cream);
     }
 
-    p {
-      margin-bottom: 0.85rem;
-      color: #1a3a2a;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-      margin-bottom: 0.85rem;
-    }
-
-    ul li {
-      margin-bottom: 0.4rem;
-      color: #1a3a2a;
-    }
-
-    a {
-      color: #082A19;
+    .policy-section h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.15rem;
       font-weight: 600;
+      color: var(--leaf);
+      margin: 20px 0 8px;
+    }
+
+    .policy-section p {
+      font-size: 0.9375rem;
+      color: var(--text-mid);
+      margin-bottom: 12px;
+    }
+
+    .policy-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-section ul,
+    .policy-section ol {
+      padding-left: 24px;
+      margin-bottom: 12px;
+    }
+
+    .policy-section li {
+      font-size: 0.9375rem;
+      color: var(--text-mid);
+      margin-bottom: 6px;
+    }
+
+    .policy-section li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Highlight box ── */
+    .highlight-box {
+      background: var(--cream);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+
+    /* ── Warning/disclaimer box ── */
+    .disclaimer-box {
+      background: #fff8ed;
+      border-left: 4px solid #e0963a;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+
+    .disclaimer-box p {
+      margin-bottom: 0;
+      font-size: 0.9rem;
+      color: #5a3d10;
+    }
+
+    .disclaimer-box strong {
+      color: #7a4f10;
+    }
+
+    /* ── Divider ── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 36px 0;
+    }
+
+    /* ── Links ── */
+    a {
+      color: var(--leaf);
       text-decoration: underline;
+      text-underline-offset: 2px;
     }
 
     a:hover {
-      color: #3B523A;
+      color: var(--evergreen);
     }
 
-    .contact-box {
-      background: #082A19;
-      color: #F2F4CA;
-      border-radius: 10px;
-      padding: 1.5rem 2rem;
-      margin-top: 3rem;
-    }
-
-    .contact-box h2 {
-      color: #F2F4CA;
-      border-bottom-color: rgba(242, 244, 202, 0.3);
-      font-family: 'Cormorant Garamond', serif;
-    }
-
-    .contact-box p {
-      color: rgba(242, 244, 202, 0.9);
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-box a {
-      color: #C9A84C;
-    }
-
+    /* ── Footer ── */
     footer {
-      background-color: #082A19;
-      color: rgba(242, 244, 202, 0.7);
+      background-color: var(--evergreen);
+      color: rgba(242, 244, 202, 0.65);
       text-align: center;
-      padding: 1.75rem 2rem;
-      font-size: 0.875rem;
+      padding: 24px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 300;
     }
 
     footer a {
-      color: #C9A84C;
-      font-weight: 600;
+      color: var(--gold);
       text-decoration: none;
     }
 
     footer a:hover {
       text-decoration: underline;
+      color: var(--cream);
     }
 
-    .footer-links {
+    footer .footer-links {
+      margin-top: 8px;
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 0.75rem;
+      gap: 20px;
       flex-wrap: wrap;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      nav {
+        padding: 0 16px;
+      }
+
+      .nav-logo {
+        font-size: 1.1rem;
+      }
+
+      main {
+        padding: 24px 12px 48px;
+      }
+
+      .page-header {
+        padding: 28px 24px 24px;
+        border-radius: 12px 12px 0 0;
+      }
+
+      .page-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .content-card {
+        padding: 28px 24px;
+        border-radius: 0 0 12px 12px;
+      }
+
+      .policy-section h2 {
+        font-size: 1.25rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="header-inner">
-      <a href="/" class="site-name">Root Work Framework</a>
-      <nav class="header-links" aria-label="Footer navigation">
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/security-policy">Security Policy</a>
-      </nav>
+  <!-- Navigation -->
+  <nav aria-label="Site navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Root Work Framework — Home">Root Work Framework</a>
+      <a href="/" class="nav-back" aria-label="Back to home page">
+        <span class="nav-back-arrow" aria-hidden="true">&#8592;</span>
+        Back to Home
+      </a>
     </div>
-  </header>
+  </nav>
 
-  <main>
-    <h1 class="page-title">Terms of Service</h1>
-    <p class="effective-date">Effective Date: February 24, 2026</p>
+  <!-- Main Content -->
+  <main id="main-content">
+    <div class="page-container">
 
-    <div class="intro">
-      <p>These Terms of Service govern your use of the Root Work Framework website and services at <strong>fg2g-rwfw.com</strong>. By accessing or using this site, you agree to be bound by these terms. Please read them carefully.</p>
+      <!-- Page Header -->
+      <header class="page-header" role="banner">
+        <p class="page-header-eyebrow">Legal &amp; Transparency</p>
+        <h1>Terms of Service</h1>
+        <p class="page-header-meta">Effective Date: February 24, 2026 &nbsp;|&nbsp; fg2g-rwfw.com</p>
+      </header>
+
+      <!-- Content Card -->
+      <article class="content-card">
+
+        <div class="highlight-box">
+          <p>Please read these Terms of Service carefully before using the Root Work Framework website at <strong>fg2g-rwfw.com</strong>. By accessing or using this site, you agree to be bound by these terms. If you do not agree, please do not use this site.</p>
+        </div>
+
+        <!-- 1. Acceptance of Terms -->
+        <section class="policy-section" aria-labelledby="section-acceptance">
+          <h2 id="section-acceptance">1. Acceptance of Terms</h2>
+          <p>These Terms of Service ("Terms") constitute a legally binding agreement between you ("you" or "user") and Dr. Shawn A. Hearn, Ed.D., J.D. ("we," "us," or "our"), the owner and operator of the Root Work Framework website located at <strong>fg2g-rwfw.com</strong> (the "Site").</p>
+          <p>By visiting, browsing, using, or submitting information through the Site, you acknowledge that you have read, understood, and agree to these Terms, including our <a href="/privacy">Privacy Policy</a>, which is incorporated herein by reference.</p>
+          <p>We reserve the right to modify these Terms at any time. Updates will be reflected by a revised effective date at the top of this page. Continued use of the Site after any changes constitutes your acceptance of the updated Terms.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 2. Description of Services -->
+        <section class="policy-section" aria-labelledby="section-services">
+          <h2 id="section-services">2. Description of Services</h2>
+          <p>The Root Work Framework website provides the following services and resources:</p>
+
+          <h3>Educational Resources</h3>
+          <p>The Site offers information, articles, frameworks, and educational content related to the Root Work Framework — a healing-centered, trauma-informed pedagogy built on the 5Rs Framework (Root, Regulate, Reflect, Restore, Reconnect). Content is intended for K-12 educators, homeschool families, charter schools, alternative education programs, and other education stakeholders.</p>
+
+          <h3>AI Chatbot (Rooty)</h3>
+          <p>The Site features an AI-powered chatbot named Rooty, built on Anthropic's Claude AI technology. Rooty is designed to answer questions about the Root Work Framework and provide general educational guidance. Rooty is provided for informational purposes only. See Section 8 for important limitations and disclaimers regarding AI chatbot use.</p>
+
+          <h3>Newsletter</h3>
+          <p>We offer a newsletter to which you may voluntarily subscribe. The newsletter delivers updates, resources, and announcements related to the Root Work Framework. You may unsubscribe at any time using the link included in every newsletter.</p>
+
+          <h3>Consultation Requests</h3>
+          <p>You may submit a consultation request form to inquire about professional services, speaking engagements, workshops, or other educational consulting services offered by Dr. Shawn A. Hearn. Submitting a request does not create a contractual obligation on either party unless a separate written agreement is executed.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 3. Intellectual Property -->
+        <section class="policy-section" aria-labelledby="section-ip">
+          <h2 id="section-ip">3. Intellectual Property</h2>
+          <p>All content on this Site — including but not limited to text, graphics, logos, images, downloadable materials, framework documentation, the "Root Work Framework" name, the "5Rs Framework" (Root, Regulate, Reflect, Restore, Reconnect), and all associated methodologies and materials — is the exclusive intellectual property of Dr. Shawn A. Hearn, Ed.D., J.D., and is protected by United States and international copyright, trademark, and intellectual property laws.</p>
+
+          <h3>Permitted Use</h3>
+          <p>You may view and download content from the Site for your own personal, non-commercial, educational purposes, provided that you:</p>
+          <ul>
+            <li>Do not remove or alter any copyright, trademark, or other proprietary notices</li>
+            <li>Attribute the content to Dr. Shawn A. Hearn and the Root Work Framework when sharing or referencing it</li>
+            <li>Do not reproduce, republish, or distribute the content for commercial purposes without prior written permission</li>
+          </ul>
+
+          <h3>Prohibited Use</h3>
+          <p>You may not:</p>
+          <ul>
+            <li>Reproduce, copy, or distribute Site content for commercial gain without written authorization</li>
+            <li>Adapt, modify, or create derivative works based on the Root Work Framework or 5Rs Framework without written authorization</li>
+            <li>Use the "Root Work Framework," "5Rs Framework," or Dr. Hearn's name or likeness to imply endorsement or affiliation without written permission</li>
+          </ul>
+          <p>To request permission for uses not described above, contact <a href="mailto:hearn.sa@gmail.com">hearn.sa@gmail.com</a>.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 4. Acceptable Use -->
+        <section class="policy-section" aria-labelledby="section-acceptable-use">
+          <h2 id="section-acceptable-use">4. Acceptable Use</h2>
+          <p>By using this Site, you agree that you will:</p>
+          <ul>
+            <li>Use the Site only for lawful purposes and in a manner consistent with these Terms</li>
+            <li>Engage with educational content for legitimate personal or professional learning purposes</li>
+            <li>Provide accurate, truthful information when submitting forms</li>
+            <li>Treat the AI chatbot (Rooty) as an informational resource and not as a substitute for professional advice</li>
+          </ul>
+
+          <p>You agree that you will not:</p>
+          <ul>
+            <li><strong>Scrape or harvest</strong> data, content, or information from this Site using automated tools, bots, spiders, or any other data extraction methods</li>
+            <li><strong>Impersonate</strong> Dr. Shawn A. Hearn, the Root Work Framework, or any other person or entity in connection with this Site</li>
+            <li><strong>Interfere</strong> with or disrupt the Site's servers, security, or infrastructure</li>
+            <li><strong>Transmit</strong> unsolicited communications, spam, or malicious code through the Site or its forms</li>
+            <li><strong>Attempt to gain unauthorized access</strong> to any portion of the Site or its backend systems</li>
+            <li><strong>Use the Site</strong> in any manner that could damage, overload, or impair the Site or its associated services</li>
+            <li><strong>Engage the AI chatbot</strong> to generate harmful, discriminatory, illegal, or misleading content</li>
+          </ul>
+
+          <p>We reserve the right to block or restrict access to the Site for any user who violates these acceptable use conditions.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 5. AI Chatbot Disclaimer -->
+        <section class="policy-section" aria-labelledby="section-ai-disclaimer">
+          <h2 id="section-ai-disclaimer">5. AI Chatbot Disclaimer (Rooty)</h2>
+          <div class="disclaimer-box">
+            <p><strong>Important:</strong> Rooty is an AI-powered chatbot provided for informational and educational purposes only. Conversations with Rooty do not constitute legal advice, medical advice, psychological counseling, therapeutic services, or any other form of professional advice. Do not rely on Rooty's responses as a substitute for consultation with a qualified professional.</p>
+          </div>
+          <p>Rooty is powered by Anthropic's Claude AI and is designed to provide general information about the Root Work Framework. AI-generated responses may occasionally be inaccurate, incomplete, or outdated. We do not guarantee the accuracy, completeness, or fitness for any particular purpose of information provided by Rooty.</p>
+          <p>By interacting with Rooty, you acknowledge and agree that:</p>
+          <ul>
+            <li>Rooty's responses are generated by an AI and do not represent the professional opinions of Dr. Shawn A. Hearn</li>
+            <li>You will independently verify any information before relying on it for decisions affecting health, safety, legal matters, or education</li>
+            <li>You will not use the chatbot to seek advice on medical diagnoses, legal disputes, mental health crises, or emergency situations — please contact qualified professionals or emergency services for such matters</li>
+          </ul>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 6. Disclaimer of Warranties -->
+        <section class="policy-section" aria-labelledby="section-warranties">
+          <h2 id="section-warranties">6. Disclaimer of Warranties</h2>
+          <p>THE SITE AND ALL CONTENT, SERVICES, AND FEATURES PROVIDED THROUGH IT ARE OFFERED ON AN <strong>"AS IS"</strong> AND <strong>"AS AVAILABLE"</strong> BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</p>
+          <p>To the fullest extent permitted by applicable law, we expressly disclaim all warranties, including but not limited to:</p>
+          <ul>
+            <li>Implied warranties of merchantability, fitness for a particular purpose, and non-infringement</li>
+            <li>Warranties that the Site will be uninterrupted, error-free, or free of viruses or other harmful components</li>
+            <li>Warranties regarding the accuracy, reliability, completeness, or timeliness of any content on the Site</li>
+          </ul>
+          <p>Your use of the Site is at your own risk. You are responsible for taking precautions to protect your device and data when accessing the internet.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 7. Limitation of Liability -->
+        <section class="policy-section" aria-labelledby="section-liability">
+          <h2 id="section-liability">7. Limitation of Liability</h2>
+          <p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, DR. SHAWN A. HEARN, ED.D., J.D., AND ANY ASSOCIATED AGENTS, EMPLOYEES, OR REPRESENTATIVES SHALL NOT BE LIABLE FOR ANY:</p>
+          <ul>
+            <li>Indirect, incidental, special, consequential, or punitive damages</li>
+            <li>Loss of profits, data, use, goodwill, or other intangible losses</li>
+            <li>Damages arising from your access to or use of (or inability to access or use) the Site</li>
+            <li>Damages arising from any content obtained from the Site</li>
+            <li>Damages arising from reliance on information provided by the AI chatbot or any other automated service</li>
+          </ul>
+          <p>This limitation applies regardless of the theory of liability (contract, tort, negligence, strict liability, or otherwise), even if we have been advised of the possibility of such damages. Some jurisdictions do not allow the exclusion or limitation of certain damages, so some of the above limitations may not apply to you.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 8. Third-Party Links -->
+        <section class="policy-section" aria-labelledby="section-links">
+          <h2 id="section-links">8. Third-Party Links</h2>
+          <p>The Site may contain links to third-party websites, resources, or services for your convenience. These links do not constitute an endorsement of those sites or their content. We have no control over the content, privacy practices, or policies of third-party sites and accept no responsibility or liability for them. You access third-party sites at your own risk and should review their terms and privacy policies independently.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 9. User Submissions -->
+        <section class="policy-section" aria-labelledby="section-submissions">
+          <h2 id="section-submissions">9. Form Submissions and Communications</h2>
+          <p>When you submit information through our forms (newsletter sign-up, consultation request, or chatbot interaction), you represent that the information you provide is accurate and that you are authorized to provide it. You agree not to submit false, misleading, or harmful information.</p>
+          <p>Submission of a consultation request form does not create a client relationship or guarantee a response within a specific timeframe. We will make reasonable efforts to respond to inquiries in a timely manner.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 10. Governing Law -->
+        <section class="policy-section" aria-labelledby="section-governing-law">
+          <h2 id="section-governing-law">10. Governing Law and Dispute Resolution</h2>
+          <p>These Terms shall be governed by and construed in accordance with the laws of the <strong>United States of America</strong> and the applicable laws of the state in which Dr. Shawn A. Hearn is domiciled, without regard to its conflict of law provisions.</p>
+          <p>Any disputes arising from or relating to these Terms or your use of the Site shall first be addressed through good-faith negotiation. You agree to contact us at <a href="mailto:hearn.sa@gmail.com">hearn.sa@gmail.com</a> before initiating any formal legal proceedings.</p>
+          <p>If a dispute cannot be resolved through negotiation, it shall be submitted to binding arbitration or resolved in a court of competent jurisdiction in the United States, as applicable.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 11. Severability -->
+        <section class="policy-section" aria-labelledby="section-severability">
+          <h2 id="section-severability">11. Severability</h2>
+          <p>If any provision of these Terms is found to be unlawful, void, or unenforceable for any reason, that provision shall be deemed severable from the remaining Terms and shall not affect the validity and enforceability of the remaining provisions.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 12. Entire Agreement -->
+        <section class="policy-section" aria-labelledby="section-entire-agreement">
+          <h2 id="section-entire-agreement">12. Entire Agreement</h2>
+          <p>These Terms, together with our <a href="/privacy">Privacy Policy</a>, constitute the entire agreement between you and Dr. Shawn A. Hearn with respect to your use of the Site. They supersede all prior agreements, representations, and understandings regarding this subject matter.</p>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- 13. Contact -->
+        <section class="policy-section" aria-labelledby="section-contact">
+          <h2 id="section-contact">13. Contact Us</h2>
+          <p>If you have any questions about these Terms of Service, please contact:</p>
+          <div class="highlight-box">
+            <p>
+              <strong>Dr. Shawn A. Hearn, Ed.D., J.D.</strong><br />
+              Root Work Framework<br />
+              Email: <a href="mailto:hearn.sa@gmail.com">hearn.sa@gmail.com</a><br />
+              Website: <a href="https://fg2g-rwfw.com">fg2g-rwfw.com</a>
+            </p>
+          </div>
+          <p>Also see our <a href="/privacy">Privacy Policy</a>.</p>
+        </section>
+
+      </article>
+      <!-- end content-card -->
+
     </div>
-
-    <section>
-      <h2>1. Acceptance of Terms</h2>
-      <p>By accessing fg2g-rwfw.com, subscribing to our newsletter, submitting a consultation request, or interacting with the Rooty AI chatbot, you agree to these Terms of Service and our <a href="/privacy">Privacy Policy</a>. If you do not agree, please do not use this site.</p>
-    </section>
-
-    <section>
-      <h2>2. Description of Services</h2>
-      <p>Root Work Framework (RWFW) provides educational resources, professional development information, and consulting services related to healing-centered, trauma-informed pedagogy. Our services include:</p>
-      <ul>
-        <li>Informational content about the Root Work Framework and the 5Rs pedagogical model</li>
-        <li>The Rooty AI chatbot for answering questions about RWFW (powered by Anthropic's Claude)</li>
-        <li>A newsletter subscription for updates on RWFW resources and events</li>
-        <li>A consultation request form to connect with Dr. Shawn A. Hearn</li>
-        <li>Information about the Savannah Initiative and related programs</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>3. Acceptable Use</h2>
-      <p>You agree to use this site only for lawful, educational purposes consistent with its mission. You agree <strong>not</strong> to:</p>
-      <ul>
-        <li>Scrape, harvest, or systematically collect data from this site without written permission</li>
-        <li>Submit false, misleading, or spam content through any forms</li>
-        <li>Attempt to circumvent rate limiting, security measures, or access controls</li>
-        <li>Impersonate Dr. Shawn A. Hearn, the Root Work Framework, or any affiliated organization</li>
-        <li>Use the Rooty AI chatbot for any purpose outside of learning about the Root Work Framework</li>
-        <li>Attempt to elicit harmful, illegal, or off-topic responses from the chatbot</li>
-        <li>Interfere with the operation of the site, its API endpoints, or its underlying infrastructure</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>4. Intellectual Property</h2>
-      <p>All content on this site — including but not limited to the Root Work Framework, the 5Rs model, the "From Garden to Growth" methodology, written materials, images, logos, and course content — is the intellectual property of Dr. Shawn A. Hearn, Ed.D., J.D., or is used with permission.</p>
-      <p>You may not reproduce, distribute, modify, or create derivative works of any content from this site without prior written consent. Educational or non-commercial quotation with attribution is permitted under fair use principles.</p>
-    </section>
-
-    <section>
-      <h2>5. AI Chatbot Disclaimer</h2>
-      <p>The Rooty AI assistant is powered by Anthropic's Claude AI and is provided for informational purposes about the Root Work Framework only. It is <strong>not</strong> a substitute for:</p>
-      <ul>
-        <li>Professional educational consultation or licensed instructional coaching</li>
-        <li>Legal advice</li>
-        <li>Mental health or therapeutic services</li>
-        <li>Medical advice</li>
-      </ul>
-      <p>AI responses may occasionally be inaccurate. Always verify important information with qualified professionals or by contacting Dr. Hearn directly.</p>
-    </section>
-
-    <section>
-      <h2>6. User-Submitted Content</h2>
-      <p>When you submit information through our forms (newsletter signup, consultation request), you represent that the information is accurate and that you have the right to provide it. You grant Root Work Framework the right to use submitted contact information to respond to your request and deliver the services you requested.</p>
-    </section>
-
-    <section>
-      <h2>7. Disclaimer of Warranties</h2>
-      <p>This site and its content are provided <strong>"as is"</strong> without warranties of any kind, either express or implied. Root Work Framework makes no warranty that:</p>
-      <ul>
-        <li>The site will be uninterrupted, error-free, or free of viruses</li>
-        <li>AI chatbot responses will be accurate or complete</li>
-        <li>The site will meet your specific requirements</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>8. Limitation of Liability</h2>
-      <p>To the fullest extent permitted by law, Dr. Shawn A. Hearn and Root Work Framework shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of this site or its services, even if advised of the possibility of such damages.</p>
-    </section>
-
-    <section>
-      <h2>9. Third-Party Services</h2>
-      <p>This site uses third-party services including Vercel (hosting), n8n (form automation), and Anthropic (AI). Your interactions with these services are subject to their respective terms of service and privacy policies. We are not responsible for the practices of these third parties.</p>
-    </section>
-
-    <section>
-      <h2>10. Governing Law</h2>
-      <p>These Terms of Service are governed by the laws of the United States. Any disputes arising from these terms or your use of this site shall be resolved in the appropriate courts of the United States.</p>
-    </section>
-
-    <section>
-      <h2>11. Changes to These Terms</h2>
-      <p>We reserve the right to update these Terms of Service at any time. Material changes will be reflected in an updated effective date. Continued use of the site after changes constitutes acceptance of the revised terms.</p>
-    </section>
-
-    <div class="contact-box">
-      <h2>Questions?</h2>
-      <p>If you have questions about these Terms of Service, please contact:</p>
-      <p><strong>Dr. Shawn A. Hearn, Ed.D., J.D.</strong><br>
-      Email: <a href="mailto:hearn.sa@gmail.com">hearn.sa@gmail.com</a></p>
-    </div>
+    <!-- end page-container -->
   </main>
 
-  <footer>
-    <div class="footer-links">
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>&copy; 2026 Dr. Shawn A. Hearn, Ed.D., J.D. All rights reserved.</p>
+    <nav class="footer-links" aria-label="Footer navigation">
       <a href="/">Home</a>
       <a href="/privacy">Privacy Policy</a>
-      <a href="/security-policy">Security Policy</a>
-    </div>
-    <p>&copy; 2026 Dr. Shawn A. Hearn, Ed.D., J.D. — Root Work Framework. All rights reserved.</p>
+      <a href="/terms">Terms of Service</a>
+      <a href="mailto:hearn.sa@gmail.com">Contact</a>
+    </nav>
   </footer>
 
 </body>
