@@ -81,13 +81,14 @@ This document tracks the comprehensive gap analysis performed on 2026-02-24 and 
 | # | Issue | Impact | Status |
 |---|-------|--------|--------|
 | 3.1 | Add loading="lazy" to all images | High | ✅ Done |
-| 3.2 | Add srcset and <picture> for responsive images | High | Planned |
-| 3.3 | Convert PNGs to WebP format | High | Planned |
+| 3.2 | Add srcset and <picture> for responsive images | High | ✅ Done — commit 74dfecc |
+| 3.3 | Convert PNGs to WebP format | High | ✅ Done — commit ac46ff5 (11 files) |
 | 3.4 | Extract and minify CSS to external stylesheet | High | ✅ Done — styles.css (1,435 lines) |
 | 3.5 | Extract JS to external files with defer | High | ✅ Done — scripts.js (453 lines) |
 | 3.6 | Extract base64 images from savannah-initiative.html (1.04 MB → ~22 KB) | High | ✅ Done |
 | 3.7 | Add custom 404 page | Medium | ✅ Done |
-| 3.8 | Add PWA service worker | Low | Planned |
+| 3.8 | Add PWA service worker | Low | Planned (Wave 2 — separate session) |
+| 3.9 | Extract logo base64 from index.html | High | ✅ Done — commit 37a5503 |
 
 ### Phase 4 — Developer Experience
 
@@ -96,8 +97,8 @@ This document tracks the comprehensive gap analysis performed on 2026-02-24 and 
 | 4.1 | Rewrite README.md with full setup/deploy/API docs | ✅ Done |
 | 4.2 | Add ESLint + Prettier config | ✅ Done |
 | 4.3 | Add GitHub Actions for linting and Lighthouse CI | ✅ Done |
-| 4.4 | Add pre-commit hooks (Husky + lint-staged) | Planned |
-| 4.5 | Add build/minification pipeline | Planned |
+| 4.4 | Add pre-commit hooks (Husky + lint-staged) | ✅ Done — commit 9346f1f |
+| 4.5 | Add build/minification pipeline | ✅ Done — commit 7212ea1 |
 
 ### SEO Gaps
 
@@ -105,7 +106,7 @@ This document tracks the comprehensive gap analysis performed on 2026-02-24 and 
 |---|-------|--------|
 | S.1 | Add FAQ schema (JSON-LD) | Planned (no clear FAQ section found in index.html) |
 | S.2 | Add BreadcrumbList schema | ✅ Done |
-| S.3 | Fix og:image dimensions to 1200x630 | Partial — documented current 1024×1024 dimensions; new 1200×630 image asset needed |
+| S.3 | Fix og:image dimensions to 1200x630 | ✅ Done — commit 2dc2e3b (icons/og-image.png generated 1200×630) |
 | S.4 | Fix missing alt text on 1 image | ✅ Done (all images confirmed with alt text) |
 
 ---
@@ -406,17 +407,17 @@ Dr. Hearn provides content or makes a decision.
 
 ### Execution Checklist
 
-- [ ] Plan reviewed and approved by project owner
-- [ ] Wave 0: GitHub issues filed (all 10 issues)
-- [ ] Wave 1 launch: 3 agents launched simultaneously
-  - [ ] AGENT-IMAGES: P3-9 complete (logo extracted)
-  - [ ] AGENT-IMAGES: P3-3 complete (PNGs → WebP)
-  - [ ] AGENT-IMAGES: FAV complete (favicon.ico generated)
-  - [ ] AGENT-IMAGES: P3-2 complete (srcset + picture)
-  - [ ] AGENT-SEO: S.3 complete (og:image 1200×630)
-  - [ ] AGENT-DEVEX: P4-4 complete (Husky + lint-staged)
-  - [ ] AGENT-DEVEX: P4-5 complete (build pipeline)
-- [ ] Wave 1 validation: verify no file conflicts, site structure intact
+- [x] Plan reviewed and approved by project owner
+- [ ] Wave 0: GitHub issues filed — **DEFERRED** (`gh` CLI not available in environment; file manually via GitHub UI using GITHUB_ISSUES.md)
+- [x] Wave 1 launch: 3 agents launched simultaneously (2026-02-24)
+  - [x] AGENT-IMAGES: P3-9 complete — commit `37a5503` (logo extracted to icons/logo.webp, 108KB)
+  - [x] AGENT-IMAGES: P3-3 complete — commit `ac46ff5` (11 PNGs → WebP, ~60-80% savings each)
+  - [x] AGENT-IMAGES: FAV complete — commit `aaf55c2` (favicon.ico 16/32/48px, added to all 6 HTML pages)
+  - [x] AGENT-IMAGES: P3-2 complete — commit `74dfecc` (srcset + picture elements for all /icons/*.png)
+  - [x] AGENT-SEO: S.3 complete — commit `2dc2e3b` (icons/og-image.png 1200×630 generated, meta tags updated)
+  - [x] AGENT-DEVEX: P4-4 complete — commit `9346f1f` (Husky + lint-staged, .husky/pre-commit)
+  - [x] AGENT-DEVEX: P4-5 complete — commit `7212ea1` (build.js: styles 45% smaller, scripts 41% smaller)
+- [x] Wave 1 validation: PASSED — clean working tree, no conflicts, all files verified
 - [ ] Wave 2: await human content input
   - [ ] S.1 FAQ schema (pending Dr. Hearn FAQ content)
   - [ ] UX-1 Testimonials (pending client content)
