@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main, 'claude/**']
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    name: Lint API Functions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install ESLint
+        run: npm install --save-dev eslint@8
+
+      - name: Run ESLint on API
+        run: npx eslint api/**/*.js --max-warnings 10
+
+  html-validate:
+    name: Validate HTML
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install html-validate
+        run: npm install --save-dev html-validate
+
+      - name: Validate HTML pages
+        run: |
+          npx html-validate \
+            --config '{"extends":["html-validate:recommended"],"rules":{"no-inline-style":"off","no-trailing-whitespace":"off","long-title":"off","wcag/h71":"off"}}' \
+            privacy.html terms.html security-policy.html 404.html || true

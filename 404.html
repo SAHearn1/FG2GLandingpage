@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found – Root Work Framework</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #0A3622;
+      color: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ── Navigation ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: #082A19;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #3B523A;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #C9A84C;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-back {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #F2F4CA;
+      text-decoration: none;
+      padding: 0.4rem 1rem;
+      border: 1px solid #3B523A;
+      border-radius: 4px;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .nav-back:hover {
+      background-color: #C9A84C;
+      color: #082A19;
+      border-color: #C9A84C;
+    }
+
+    /* ── Main content ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .card-wrapper {
+      width: 100%;
+      max-width: 520px;
+    }
+
+    /* Dark green header block with rounded top corners */
+    .card-header {
+      background-color: #082A19;
+      border-radius: 12px 12px 0 0;
+      padding: 2.5rem 2.5rem 2rem;
+      text-align: center;
+      border: 1px solid #3B523A;
+      border-bottom: none;
+    }
+
+    .error-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 6rem;
+      font-weight: 700;
+      color: #C9A84C;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .error-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #F2F4CA;
+      margin-top: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* White content card with rounded bottom corners */
+    .card-body {
+      background-color: #ffffff;
+      border-radius: 0 0 12px 12px;
+      padding: 2rem 2.5rem 2.5rem;
+      text-align: center;
+      border: 1px solid #e0e0e0;
+      border-top: none;
+    }
+
+    .brand-message {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: #3B523A;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .helper-text {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+    }
+
+    .btn-home {
+      display: inline-block;
+      background-color: #082A19;
+      color: #F2F4CA;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.75rem 2rem;
+      border-radius: 6px;
+      margin-bottom: 1.75rem;
+      transition: background-color 0.2s;
+    }
+
+    .btn-home:hover {
+      background-color: #C9A84C;
+      color: #082A19;
+    }
+
+    .card-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      padding-top: 1.25rem;
+      border-top: 1px solid #eee;
+    }
+
+    .card-links a {
+      font-size: 0.85rem;
+      color: #3B523A;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .card-links a:hover {
+      color: #C9A84C;
+      text-decoration: underline;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background-color: #082A19;
+      border-top: 1px solid #3B523A;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 0.85rem;
+      color: #F2F4CA;
+      opacity: 0.75;
+      line-height: 1.6;
+    }
+
+    .footer-text a {
+      color: #C9A84C;
+      text-decoration: none;
+    }
+
+    .footer-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .error-number {
+        font-size: 4.5rem;
+      }
+
+      .error-title {
+        font-size: 1.4rem;
+      }
+
+      .card-header,
+      .card-body {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">Root Work Framework</a>
+    <a href="/" class="nav-back">Back to Home</a>
+  </nav>
+
+  <main>
+    <div class="card-wrapper">
+      <header class="card-header">
+        <div class="error-number">404</div>
+        <div class="error-title">Page Not Found</div>
+      </header>
+
+      <div class="card-body">
+        <p class="brand-message">This page has wandered off the path.<br>Let&rsquo;s root you back.</p>
+        <p class="helper-text">
+          The page you&rsquo;re looking for may have moved, been removed, or the link
+          may have been mistyped. Return home and we&rsquo;ll help you find your way.
+        </p>
+        <a href="/" class="btn-home">Return to Homepage</a>
+
+        <div class="card-links">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p class="footer-text">
+      &copy; 2026 Root Work Framework &mdash; Dr. Shawn A. Hearn, Ed.D., J.D.<br>
+      Questions? <a href="mailto:hearn.sa@gmail.com">hearn.sa@gmail.com</a>
+    </p>
+  </footer>
+
+</body>
+</html>
