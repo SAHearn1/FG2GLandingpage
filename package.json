@@ -5,7 +5,19 @@
   "main": "index.html",
   "scripts": {
     "start": "npx serve",
-    "deploy": "vercel --prod"
+    "deploy": "vercel --prod",
+    "prepare": "husky",
+    "lint": "eslint \"api/**/*.js\"",
+    "lint:staged": "lint-staged",
+    "build": "node build.js"
+  },
+  "lint-staged": {
+    "api/**/*.js": ["eslint --fix", "prettier --write"],
+    "*.html": ["prettier --write"]
+  },
+  "devDependencies": {
+    "husky": "^9.0.0",
+    "lint-staged": "^15.0.0"
   },
   "keywords": [
     "education",
