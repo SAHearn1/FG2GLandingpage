@@ -1486,27 +1486,27 @@
             </div>
             <div class="framework-grid">
                 <div class="framework-card">
-                    <div class="icon"><img src="icons/root.png" alt="Root icon"></div>
+                    <div class="icon"><img src="icons/root.png" alt="Root icon" loading="lazy"></div>
                     <h3>Root</h3>
                     <p>Connect to purpose, culture, and place. Ground learning in students' identities and community contexts.</p>
                 </div>
                 <div class="framework-card">
-                    <div class="icon"><img src="icons/regulate.png" alt="Regulate icon"></div>
+                    <div class="icon"><img src="icons/regulate.png" alt="Regulate icon" loading="lazy"></div>
                     <h3>Regulate</h3>
                     <p>Prepare mind and body for learning through rituals, rhythms, and co-regulation practices.</p>
                 </div>
                 <div class="framework-card">
-                    <div class="icon"><img src="icons/reflect.png" alt="Reflect icon"></div>
+                    <div class="icon"><img src="icons/reflect.png" alt="Reflect icon" loading="lazy"></div>
                     <h3>Reflect</h3>
                     <p>Encourage self-assessment, metacognition, and meaning-making through structured reflection.</p>
                 </div>
                 <div class="framework-card">
-                    <div class="icon"><img src="icons/restore.png" alt="Restore icon"></div>
+                    <div class="icon"><img src="icons/restore.png" alt="Restore icon" loading="lazy"></div>
                     <h3>Restore</h3>
                     <p>Address harm, repair relationships, and rebuild trust through restorative practices.</p>
                 </div>
                 <div class="framework-card">
-                    <div class="icon"><img src="icons/reconnect.png" alt="Reconnect icon"></div>
+                    <div class="icon"><img src="icons/reconnect.png" alt="Reconnect icon" loading="lazy"></div>
                     <h3>Reconnect</h3>
                     <p>Apply learning to community and environment, fostering agency and civic engagement.</p>
                 </div>
@@ -1599,27 +1599,27 @@
             </div>
             <div class="feature-grid">
                 <div class="feature-item">
-                    <h3><img src="icons/target-pedagogy.svg" alt="Target icon" class="inline-icon"> Dual-Purpose Pedagogy</h3>
+                    <h3><img src="icons/target-pedagogy.svg" alt="Target icon" class="inline-icon" loading="lazy"> Dual-Purpose Pedagogy</h3>
                     <p>Simultaneously addresses academic rigor and students' readiness to learn. Every lesson integrates SEL, regulation, and content mastery.</p>
                 </div>
                 <div class="feature-item">
-                    <h3><img src="icons/book-standards.svg" alt="Book icon" class="inline-icon"> Standards-Aligned</h3>
+                    <h3><img src="icons/book-standards.svg" alt="Book icon" class="inline-icon" loading="lazy"> Standards-Aligned</h3>
                     <p>Fully aligned with state and national standards while incorporating healing-centered best practices that address the impacts of adverse childhood experiences.</p>
                 </div>
                 <div class="feature-item">
-                    <h3><img src="icons/head-brain.svg" alt="Brain icon" class="inline-icon"> SAMHSA-Aligned</h3>
+                    <h3><img src="icons/head-brain.svg" alt="Brain icon" class="inline-icon" loading="lazy"> SAMHSA-Aligned</h3>
                     <p>Built on SAMHSA's 6 principles for addressing the impacts of adverse childhood experiences: safety, trustworthiness, peer support, collaboration, empowerment, and cultural responsiveness.</p>
                 </div>
                 <div class="feature-item">
-                    <h3><img src="icons/leaf-biophilic.svg" alt="Leaf icon" class="inline-icon"> Biophilic Design</h3>
+                    <h3><img src="icons/leaf-biophilic.svg" alt="Leaf icon" class="inline-icon" loading="lazy"> Biophilic Design</h3>
                     <p>Integrates nature-based learning through Living Learning Labs, therapeutic horticulture, and environmental stewardship.</p>
                 </div>
                 <div class="feature-item">
-                    <h3><img src="icons/scales-justice.svg" alt="Scales icon" class="inline-icon"> Social Justice Focus</h3>
+                    <h3><img src="icons/scales-justice.svg" alt="Scales icon" class="inline-icon" loading="lazy"> Social Justice Focus</h3>
                     <p>Centers equity, dignity, and healing. Designed for communities most impacted by systemic inequities.</p>
                 </div>
                 <div class="feature-item">
-                    <h3><img src="icons/magnify-research.svg" alt="Magnifying glass icon" class="inline-icon"> Research-Backed</h3>
+                    <h3><img src="icons/magnify-research.svg" alt="Magnifying glass icon" class="inline-icon" loading="lazy"> Research-Backed</h3>
                     <p>Built on work from leading scholars in addressing the impacts of adverse childhood experiences, restorative justice, and culturally responsive pedagogy.</p>
                 </div>
             </div>
@@ -1708,7 +1708,7 @@
 
     <div id="rooty-window" role="dialog" aria-modal="true" aria-label="Rooty chat assistant">
         <div class="rooty-header">
-            <div class="rooty-header-avatar"><img src="icons/tree-simple.svg" alt="Rooty"></div>
+            <div class="rooty-header-avatar"><img src="icons/tree-simple.svg" alt="Rooty" loading="lazy"></div>
             <div class="rooty-header-info">
                 <div class="rooty-header-name">Rooty</div>
                 <div class="rooty-header-sub">Root Work Framework Guide</div>
@@ -1739,7 +1739,7 @@
             <button class="newsletter-close" id="newsletterClose" aria-label="Close modal">&times;</button>
             
             <div class="newsletter-header">
-                <div class="newsletter-icon"><img src="icons/tree-roots.svg" alt="RootWork Network icon"></div>
+                <div class="newsletter-icon"><img src="icons/tree-roots.svg" alt="RootWork Network icon" loading="lazy"></div>
                 <h3 id="newsletter-modal-title">Join the RootWork Network</h3>
                 <p>Get free monthly teacher tools & updates delivered to your inbox</p>
             </div>
@@ -2164,6 +2164,7 @@
             toggle.addEventListener('click', () => {
                 const isOpen = win.classList.toggle('open');
                 toggle.classList.toggle('open', isOpen);
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
                 if (isOpen && labelEl) labelEl.classList.add('hidden');
                 if (isOpen) {
                     input.focus();
