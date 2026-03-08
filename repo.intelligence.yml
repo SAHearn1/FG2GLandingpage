@@ -1,0 +1,49 @@
+# repo.intelligence.yml — FG2GLandingpage
+# Anti-hallucination enforced: unverified fields marked TODO
+# Last updated: 2026-03-08 | Phase C governance install
+
+repo:
+  name: FG2GLandingpage
+  owner: SAHearn1
+  tier: 2
+  classification: active-support
+  description: FG2G landing page — static HTML with Vercel serverless functions
+
+stack:
+  type: static-html-with-serverless
+  language: HTML + CSS + JavaScript
+  serverless: Vercel Functions
+  framework: "TODO — requires human verification (plain HTML or framework?)"
+
+auth:
+  provider: none
+  notes: Landing page, no persistent auth
+
+database:
+  primary: none
+  notes: Serverless functions may call external APIs — TODO verify
+
+deployment:
+  platform: Vercel
+  branch_strategy:
+    production: main
+    governance_install: agent-operating-system-install
+
+ci:
+  platform: GitHub Actions
+  governance_workflow: .github/workflows/agent-governance.yml
+
+entrypoints:
+  app: index.html
+  api: api/ (TODO: verify Vercel function directory)
+
+critical_env_vars:
+  - "TODO — requires human verification (any API keys for serverless functions?)"
+
+related_repos:
+  - SAHearn1/rwfw-agent-governance
+
+governance:
+  hub: SAHearn1/rwfw-agent-governance
+  install_branch: agent-operating-system-install
+  schema: registry/repo-intelligence.schema.json

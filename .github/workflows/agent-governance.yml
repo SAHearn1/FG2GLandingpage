@@ -1,0 +1,23 @@
+name: Agent Governance Validation
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'AGENTS.md'
+      - 'repo.intelligence.yml'
+      - 'docs/**'
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/PULL_REQUEST_TEMPLATE.md'
+
+jobs:
+  validate-governance:
+    name: Validate Governance Files
+    runs-on: ubuntu-latest
+    if: contains(github.head_ref, 'agent-operating-system-install') || contains(github.head_ref, 'governance')
+    steps:
+      - uses: actions/checkout@v4
+      - run: [ -f AGENTS.md ] && echo "present" || (echo "AGENTS.md missing" && exit 1)
+      - run: [ -f repo.intelligence.yml ] && echo "present" || (echo "missing" && exit 1)
+      - run: echo "Repo: FG2GLandingpage | Tier: 2 | Hub: SAHearn1/rwfw-agent-governance"
